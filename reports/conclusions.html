@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Conclusions -- Emploi des jeunes en Europe</title>
+<style>
+*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+body { background:#1e1e2e; color:#e0e0e0; font-family:"Segoe UI",Arial,sans-serif;
+       font-size:15px; line-height:1.75; max-width:1100px; margin:0 auto; padding:0 24px 60px; }
+
+/* ── Header ── */
+.site-header { padding:36px 0 24px; border-bottom:3px solid #00b4d8; margin-bottom:36px; }
+.site-header h1 { font-size:26px; color:#fff; margin-bottom:8px; }
+.site-header p  { color:#9e9e9e; font-size:14px; }
+
+/* ── Sections ── */
+.section-title { font-size:22px; color:#fff; margin:48px 0 8px; padding-bottom:12px;
+                  border-bottom:2px solid #3a3a4e; }
+.section-intro { color:#9e9e9e; font-size:14px; margin-bottom:28px; }
+
+/* ── Navigation pays ── */
+.nav-pays { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:32px; }
+.nav-pays a { background:#2a2a3e; color:#00b4d8; border:1px solid #3a3a4e; border-radius:20px;
+               padding:5px 14px; font-size:12px; text-decoration:none; }
+.nav-pays a:hover { background:#00b4d8; color:#fff; }
+
+/* ── Grille pays ── */
+.pays-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(480px, 1fr)); gap:20px; }
+
+/* ── Carte pays ── */
+.pays-card { background:#2a2a3e; border-radius:12px; padding:22px 24px; }
+.pays-header { display:flex; justify-content:space-between; align-items:flex-start;
+                margin-bottom:10px; flex-wrap:wrap; gap:10px; }
+.pays-title { display:flex; align-items:center; gap:10px; }
+.pays-flag  { font-size:24px; }
+.pays-title h3 { font-size:17px; color:#fff; font-weight:600; }
+.pays-kpis  { display:flex; align-items:center; gap:12px; }
+.kpi-main   { text-align:right; }
+.kpi-num    { font-size:28px; font-weight:700; display:block; line-height:1; }
+.kpi-sub    { font-size:11px; color:#9e9e9e; }
+.etiquette  { font-size:11px; font-weight:600; padding:4px 10px; border-radius:20px; white-space:nowrap; }
+
+.barre-wrap { background:#16162a; border-radius:4px; height:5px; margin:12px 0 16px; overflow:hidden; }
+.barre      { height:100%; border-radius:4px; transition:width 1s; }
+
+.pays-texte { font-size:13.5px; color:#e0e0e0; line-height:1.7; margin-bottom:14px; }
+
+.pays-footer { display:flex; flex-direction:column; gap:10px; }
+.tendance   { font-size:12px; font-weight:600; }
+.neet-badge { font-size:11px; font-weight:600; border:1px solid; border-radius:20px;
+               padding:3px 10px; display:inline-block; width:fit-content; }
+
+/* ── Comparaison diplome ── */
+.ed-compare { margin-top:4px; }
+.ed-row     { display:flex; align-items:center; gap:10px; margin-bottom:6px; }
+.ed-label   { font-size:11px; color:#9e9e9e; width:170px; flex-shrink:0; }
+.ed-bar-wrap{ flex:1; background:#16162a; border-radius:3px; height:8px; overflow:hidden; }
+.ed-bar     { height:100%; border-radius:3px; }
+.ed-val     { font-size:12px; font-weight:700; width:36px; text-align:right; flex-shrink:0; }
+
+/* ── Messages cles ── */
+.messages { display:flex; flex-direction:column; gap:24px; }
+.message-card { background:#2a2a3e; border-radius:12px; padding:28px 32px; }
+.message-header { display:flex; align-items:center; gap:14px; margin-bottom:16px; }
+.message-icone  { font-size:28px; flex-shrink:0; }
+.message-card h3 { font-size:17px; font-weight:600; line-height:1.4; }
+.message-texte  { font-size:14px; color:#e0e0e0; line-height:1.8; }
+.message-texte strong { color:#fff; }
+.message-texte em { color:#00b4d8; font-style:normal; }
+
+footer { text-align:center; padding:32px 0 0; color:#9e9e9e; font-size:12px;
+          border-top:1px solid #3a3a4e; margin-top:48px; }
+</style>
+</head>
+<body>
+
+<div class="site-header">
+  <h1>Ce qu'on retient sur l'emploi des jeunes en Europe</h1>
+  <p>Source : Eurostat &nbsp;|&nbsp; Jeunes de 15 a 24 ans &nbsp;|&nbsp; Donnees 2010-2025 &nbsp;|&nbsp; 27 pays de l'UE</p>
+</div>
+
+<!-- ══ SECTION 1 : PAYS ══ -->
+<h2 class="section-title">La situation dans chaque pays</h2>
+<p class="section-intro">
+  Du plus facile au plus difficile pour un jeune de trouver un emploi.
+  Le chiffre indique combien de jeunes sur 100, qui cherchent activement un emploi, ne le trouvent pas.
+  Les barres de couleur en dessous du nom de chaque pays montrent la difference de chomage
+  entre ceux qui ont un diplome superieur et ceux qui n'ont pas le baccalaureat.
+</p>
+
+<nav class="nav-pays"><a href="#DE">Allemagne</a><a href="#NL">Pays-Bas</a><a href="#MT">Malte</a><a href="#CZ">Tcheque</a><a href="#AT">Autriche</a><a href="#IE">Irlande</a><a href="#SI">Slovenie</a><a href="#PL">Pologne</a><a href="#BG">Bulgarie</a><a href="#CY">Chypre</a><a href="#DK">Danemark</a><a href="#HU">Hongrie</a><a href="#LT">Lituanie</a><a href="#LV">Lettonie</a><a href="#SK">Slovaquie</a><a href="#BE">Belgique</a><a href="#HR">Croatie</a><a href="#EL">Grece</a><a href="#PT">Portugal</a><a href="#FR">France</a><a href="#IT">Italie</a><a href="#EE">Estonie</a><a href="#LU">Luxembourg</a><a href="#FI">Finlande</a><a href="#SE">Suede</a><a href="#ES">Espagne</a><a href="#RO">Roumanie</a></nav>
+
+<div class="pays-grid">
+
+<div class="pays-card" id="DE">
+  <div class="pays-header">
+    <div class="pays-title">
+      <span class="pays-flag">&#127988;</span>
+      <h3>Allemagne</h3>
+    </div>
+    <div class="pays-kpis">
+      <div class="kpi-main">
+        <span class="kpi-num" style="color:#06d6a0">7 %</span>
+        <span class="kpi-sub">de jeunes au chomage (2025)</span>
+      </div>
+      <span class="etiquette" style="background:#06d6a022;color:#06d6a0;border:1px solid #06d6a0">Favorable</span>
+    </div>
+  </div>
+  <div class="barre-wrap">
+    <div class="barre" style="width:20%;background:linear-gradient(90deg,#06d6a088,#06d6a0)"></div>
+  </div>
+  <p class="pays-texte">L'Allemagne est la meilleure eleve d'Europe. Sur 100 jeunes qui cherchent un emploi, seulement 7 ne trouvent pas. C'est comme une classe entiere ou presque tout le monde trouverait un stage. Le secret ? Un systeme d'apprentissage tres developpe : beaucoup de jeunes apprennent directement en entreprise, ce qui facilite l'embauche.</p>
+  <div class="pays-footer">
+    <span class="tendance" style="color:#ef233c">↑ En hausse de 1.2 pts (3 derniers ans)</span>
+    <span class="neet-badge" style="border-color:#ff6b35;color:#ff6b35">8.2 % decrochés</span>
+    
+        <div class="ed-compare">
+          <div class="ed-row">
+            <span class="ed-label">Avec un diplome superieur</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:11%;background:#06d6a0"></div></div>
+            <span class="ed-val" style="color:#06d6a0">6 %</span>
+          </div>
+          <div class="ed-row">
+            <span class="ed-label">Sans diplome</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:22%;background:#ef233c"></div></div>
+            <span class="ed-val" style="color:#ef233c">11 %</span>
+          </div>
+        </div>
+  </div>
+</div>
+
+<div class="pays-card" id="NL">
+  <div class="pays-header">
+    <div class="pays-title">
+      <span class="pays-flag">&#127988;</span>
+      <h3>Pays-Bas</h3>
+    </div>
+    <div class="pays-kpis">
+      <div class="kpi-main">
+        <span class="kpi-num" style="color:#06d6a0">9 %</span>
+        <span class="kpi-sub">de jeunes au chomage (2025)</span>
+      </div>
+      <span class="etiquette" style="background:#06d6a022;color:#06d6a0;border:1px solid #06d6a0">Favorable</span>
+    </div>
+  </div>
+  <div class="barre-wrap">
+    <div class="barre" style="width:25%;background:linear-gradient(90deg,#06d6a088,#06d6a0)"></div>
+  </div>
+  <p class="pays-texte">Les Pays-Bas fonctionnent tres bien pour les jeunes. Le marche du travail est flexible et les entreprises embauchent facilement. Petit point d'attention : beaucoup de ces emplois sont a temps partiel. Un jeune neerlandais peut travailler 20 heures par semaine tout en faisant des etudes, ce qui gonfle un peu les bons chiffres.</p>
+  <div class="pays-footer">
+    <span class="tendance" style="color:#ef233c">↑ En hausse de 0.6 pts (3 derniers ans)</span>
+    <span class="neet-badge" style="border-color:#06d6a0;color:#06d6a0">3.9 % decrochés</span>
+    
+        <div class="ed-compare">
+          <div class="ed-row">
+            <span class="ed-label">Avec un diplome superieur</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:16%;background:#06d6a0"></div></div>
+            <span class="ed-val" style="color:#06d6a0">8 %</span>
+          </div>
+          <div class="ed-row">
+            <span class="ed-label">Sans diplome</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:22%;background:#ef233c"></div></div>
+            <span class="ed-val" style="color:#ef233c">11 %</span>
+          </div>
+        </div>
+  </div>
+</div>
+
+<div class="pays-card" id="MT">
+  <div class="pays-header">
+    <div class="pays-title">
+      <span class="pays-flag">&#127988;</span>
+      <h3>Malte</h3>
+    </div>
+    <div class="pays-kpis">
+      <div class="kpi-main">
+        <span class="kpi-num" style="color:#06d6a0">10 %</span>
+        <span class="kpi-sub">de jeunes au chomage (2025)</span>
+      </div>
+      <span class="etiquette" style="background:#06d6a022;color:#06d6a0;border:1px solid #06d6a0">Favorable</span>
+    </div>
+  </div>
+  <div class="barre-wrap">
+    <div class="barre" style="width:27%;background:linear-gradient(90deg,#06d6a088,#06d6a0)"></div>
+  </div>
+  <p class="pays-texte">Malte est une bonne surprise. Cette petite ile mediterraneenne affiche un taux de chomage des jeunes parmi les plus bas d'Europe. Le tourisme et les services financiers emploient beaucoup de jeunes. L'anglais courant y est un avantage : beaucoup d'entreprises internationales s'y installent.</p>
+  <div class="pays-footer">
+    <span class="tendance" style="color:#9e9e9e">→ Stable (3 derniers ans)</span>
+    <span class="neet-badge" style="border-color:#ff6b35;color:#ff6b35">8.4 % decrochés</span>
+    
+        <div class="ed-compare">
+          <div class="ed-row">
+            <span class="ed-label">Avec un diplome superieur</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:20%;background:#06d6a0"></div></div>
+            <span class="ed-val" style="color:#06d6a0">10 %</span>
+          </div>
+          <div class="ed-row">
+            <span class="ed-label">Sans diplome</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:46%;background:#ef233c"></div></div>
+            <span class="ed-val" style="color:#ef233c">23 %</span>
+          </div>
+        </div>
+  </div>
+</div>
+
+<div class="pays-card" id="CZ">
+  <div class="pays-header">
+    <div class="pays-title">
+      <span class="pays-flag">&#127988;</span>
+      <h3>Tcheque</h3>
+    </div>
+    <div class="pays-kpis">
+      <div class="kpi-main">
+        <span class="kpi-num" style="color:#00b4d8">10 %</span>
+        <span class="kpi-sub">de jeunes au chomage (2025)</span>
+      </div>
+      <span class="etiquette" style="background:#00b4d822;color:#00b4d8;border:1px solid #00b4d8">Correct</span>
+    </div>
+  </div>
+  <div class="barre-wrap">
+    <div class="barre" style="width:30%;background:linear-gradient(90deg,#00b4d888,#00b4d8)"></div>
+  </div>
+  <p class="pays-texte">La Republique tcheque a fait un chemin impressionnant. En 2010, 18 jeunes sur 100 etaient au chomage. Aujourd'hui, c'est 10. Concrètement, c'est comme si la moitie des jeunes sans emploi avaient trouve un travail en 15 ans. L'industrie automobile et la fabrication sont les grands employeurs des jeunes ici.</p>
+  <div class="pays-footer">
+    <span class="tendance" style="color:#ef233c">↑ En hausse de 2.1 pts (3 derniers ans)</span>
+    <span class="neet-badge" style="border-color:#06d6a0;color:#06d6a0">4.9 % decrochés</span>
+    
+        <div class="ed-compare">
+          <div class="ed-row">
+            <span class="ed-label">Avec un diplome superieur</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:13%;background:#06d6a0"></div></div>
+            <span class="ed-val" style="color:#06d6a0">6 %</span>
+          </div>
+          <div class="ed-row">
+            <span class="ed-label">Sans diplome</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:53%;background:#ef233c"></div></div>
+            <span class="ed-val" style="color:#ef233c">27 %</span>
+          </div>
+        </div>
+  </div>
+</div>
+
+<div class="pays-card" id="AT">
+  <div class="pays-header">
+    <div class="pays-title">
+      <span class="pays-flag">&#127988;</span>
+      <h3>Autriche</h3>
+    </div>
+    <div class="pays-kpis">
+      <div class="kpi-main">
+        <span class="kpi-num" style="color:#00b4d8">12 %</span>
+        <span class="kpi-sub">de jeunes au chomage (2025)</span>
+      </div>
+      <span class="etiquette" style="background:#00b4d822;color:#00b4d8;border:1px solid #00b4d8">Correct</span>
+    </div>
+  </div>
+  <div class="barre-wrap">
+    <div class="barre" style="width:33%;background:linear-gradient(90deg,#00b4d888,#00b4d8)"></div>
+  </div>
+  <p class="pays-texte">L'Autriche ressemble beaucoup a l'Allemagne : l'apprentissage en entreprise est tres courant et les jeunes entrent vite dans la vie active. La situation s'est toutefois legerement degradee ces dernieres annees, passant de 10 % a 11,5 %. Rien d'alarmant, mais un chiffre a surveiller.</p>
+  <div class="pays-footer">
+    <span class="tendance" style="color:#ef233c">↑ En hausse de 1.1 pts (3 derniers ans)</span>
+    <span class="neet-badge" style="border-color:#ff6b35;color:#ff6b35">9.7 % decrochés</span>
+    
+        <div class="ed-compare">
+          <div class="ed-row">
+            <span class="ed-label">Avec un diplome superieur</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:19%;background:#06d6a0"></div></div>
+            <span class="ed-val" style="color:#06d6a0">10 %</span>
+          </div>
+          <div class="ed-row">
+            <span class="ed-label">Sans diplome</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:33%;background:#ef233c"></div></div>
+            <span class="ed-val" style="color:#ef233c">16 %</span>
+          </div>
+        </div>
+  </div>
+</div>
+
+<div class="pays-card" id="IE">
+  <div class="pays-header">
+    <div class="pays-title">
+      <span class="pays-flag">&#127988;</span>
+      <h3>Irlande</h3>
+    </div>
+    <div class="pays-kpis">
+      <div class="kpi-main">
+        <span class="kpi-num" style="color:#00b4d8">12 %</span>
+        <span class="kpi-sub">de jeunes au chomage (2025)</span>
+      </div>
+      <span class="etiquette" style="background:#00b4d822;color:#00b4d8;border:1px solid #00b4d8">Correct</span>
+    </div>
+  </div>
+  <div class="barre-wrap">
+    <div class="barre" style="width:34%;background:linear-gradient(90deg,#00b4d888,#00b4d8)"></div>
+  </div>
+  <p class="pays-texte">L'Irlande a vecu une transformation remarquable. En 2010, pres de 28 jeunes sur 100 etaient au chomage — une vraie crise. Aujourd'hui, c'est 12. Ce qui a tout change ? L'arrivee massive de grandes entreprises technologiques (Google, Meta, Apple...) qui ont cree des milliers d'emplois pour les jeunes qualifies.</p>
+  <div class="pays-footer">
+    <span class="tendance" style="color:#ef233c">↑ En hausse de 1.1 pts (3 derniers ans)</span>
+    <span class="neet-badge" style="border-color:#06d6a0;color:#06d6a0">6.4 % decrochés</span>
+    
+        <div class="ed-compare">
+          <div class="ed-row">
+            <span class="ed-label">Avec un diplome superieur</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:16%;background:#06d6a0"></div></div>
+            <span class="ed-val" style="color:#06d6a0">8 %</span>
+          </div>
+          <div class="ed-row">
+            <span class="ed-label">Sans diplome</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:43%;background:#ef233c"></div></div>
+            <span class="ed-val" style="color:#ef233c">21 %</span>
+          </div>
+        </div>
+  </div>
+</div>
+
+<div class="pays-card" id="SI">
+  <div class="pays-header">
+    <div class="pays-title">
+      <span class="pays-flag">&#127988;</span>
+      <h3>Slovenie</h3>
+    </div>
+    <div class="pays-kpis">
+      <div class="kpi-main">
+        <span class="kpi-num" style="color:#00b4d8">12 %</span>
+        <span class="kpi-sub">de jeunes au chomage (2025)</span>
+      </div>
+      <span class="etiquette" style="background:#00b4d822;color:#00b4d8;border:1px solid #00b4d8">Correct</span>
+    </div>
+  </div>
+  <div class="barre-wrap">
+    <div class="barre" style="width:35%;background:linear-gradient(90deg,#00b4d888,#00b4d8)"></div>
+  </div>
+  <p class="pays-texte">La Slovenie est un pays discret mais qui se debrouille bien. Son taux de chomage des jeunes est modere et le pays est plutot stable. Ce petit pays d'Europe centrale a une economie diversifiee, ce qui protege les jeunes contre les crises qui touchent un seul secteur.</p>
+  <div class="pays-footer">
+    <span class="tendance" style="color:#ef233c">↑ En hausse de 2.2 pts (3 derniers ans)</span>
+    <span class="neet-badge" style="border-color:#06d6a0;color:#06d6a0">6.8 % decrochés</span>
+    
+        <div class="ed-compare">
+          <div class="ed-row">
+            <span class="ed-label">Avec un diplome superieur</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:28%;background:#06d6a0"></div></div>
+            <span class="ed-val" style="color:#06d6a0">14 %</span>
+          </div>
+          <div class="ed-row">
+            <span class="ed-label">Sans diplome</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:35%;background:#ef233c"></div></div>
+            <span class="ed-val" style="color:#ef233c">17 %</span>
+          </div>
+        </div>
+  </div>
+</div>
+
+<div class="pays-card" id="PL">
+  <div class="pays-header">
+    <div class="pays-title">
+      <span class="pays-flag">&#127988;</span>
+      <h3>Pologne</h3>
+    </div>
+    <div class="pays-kpis">
+      <div class="kpi-main">
+        <span class="kpi-num" style="color:#00b4d8">12 %</span>
+        <span class="kpi-sub">de jeunes au chomage (2025)</span>
+      </div>
+      <span class="etiquette" style="background:#00b4d822;color:#00b4d8;border:1px solid #00b4d8">Correct</span>
+    </div>
+  </div>
+  <div class="barre-wrap">
+    <div class="barre" style="width:35%;background:linear-gradient(90deg,#00b4d888,#00b4d8)"></div>
+  </div>
+  <p class="pays-texte">La Pologne a enormement progresse depuis 2010, ou presque 1 jeune sur 4 etait sans emploi. Aujourd'hui c'est 12 %. L'economie polonaise a beaucoup grandi ces 15 ans. Seul bémol : beaucoup de jeunes Polonais qualifies partent travailler en Allemagne ou en France, ce qu'on appelle la 'fuite des cerveaux'.</p>
+  <div class="pays-footer">
+    <span class="tendance" style="color:#ef233c">↑ En hausse de 0.8 pts (3 derniers ans)</span>
+    <span class="neet-badge" style="border-color:#06d6a0;color:#06d6a0">7.1 % decrochés</span>
+    
+        <div class="ed-compare">
+          <div class="ed-row">
+            <span class="ed-label">Avec un diplome superieur</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:16%;background:#06d6a0"></div></div>
+            <span class="ed-val" style="color:#06d6a0">8 %</span>
+          </div>
+          <div class="ed-row">
+            <span class="ed-label">Sans diplome</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:37%;background:#ef233c"></div></div>
+            <span class="ed-val" style="color:#ef233c">18 %</span>
+          </div>
+        </div>
+  </div>
+</div>
+
+<div class="pays-card" id="BG">
+  <div class="pays-header">
+    <div class="pays-title">
+      <span class="pays-flag">&#127988;</span>
+      <h3>Bulgarie</h3>
+    </div>
+    <div class="pays-kpis">
+      <div class="kpi-main">
+        <span class="kpi-num" style="color:#00b4d8">13 %</span>
+        <span class="kpi-sub">de jeunes au chomage (2025)</span>
+      </div>
+      <span class="etiquette" style="background:#00b4d822;color:#00b4d8;border:1px solid #00b4d8">Correct</span>
+    </div>
+  </div>
+  <div class="barre-wrap">
+    <div class="barre" style="width:37%;background:linear-gradient(90deg,#00b4d888,#00b4d8)"></div>
+  </div>
+  <p class="pays-texte">La Bulgarie a fait des progres (de 22 % a 13 %), mais elle reste fragile. Le vrai probleme ici est la fuite des jeunes vers l'Ouest : des centaines de milliers de Bulgares qualifies ont quitte le pays pour la France, l'Allemagne ou les Pays-Bas. Ceux qui restent trouvent souvent du travail, mais les salaires sont tres bas.</p>
+  <div class="pays-footer">
+    <span class="tendance" style="color:#ef233c">↑ En hausse de 1.0 pts (3 derniers ans)</span>
+    <span class="neet-badge" style="border-color:#ff6b35;color:#ff6b35">11.5 % decrochés</span>
+    
+        <div class="ed-compare">
+          <div class="ed-row">
+            <span class="ed-label">Avec un diplome superieur</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:35%;background:#06d6a0"></div></div>
+            <span class="ed-val" style="color:#06d6a0">18 %</span>
+          </div>
+          <div class="ed-row">
+            <span class="ed-label">Sans diplome</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:48%;background:#ef233c"></div></div>
+            <span class="ed-val" style="color:#ef233c">24 %</span>
+          </div>
+        </div>
+  </div>
+</div>
+
+<div class="pays-card" id="CY">
+  <div class="pays-header">
+    <div class="pays-title">
+      <span class="pays-flag">&#127988;</span>
+      <h3>Chypre</h3>
+    </div>
+    <div class="pays-kpis">
+      <div class="kpi-main">
+        <span class="kpi-num" style="color:#00b4d8">14 %</span>
+        <span class="kpi-sub">de jeunes au chomage (2025)</span>
+      </div>
+      <span class="etiquette" style="background:#00b4d822;color:#00b4d8;border:1px solid #00b4d8">Correct</span>
+    </div>
+  </div>
+  <div class="barre-wrap">
+    <div class="barre" style="width:39%;background:linear-gradient(90deg,#00b4d888,#00b4d8)"></div>
+  </div>
+  <p class="pays-texte">Chypre est dans une situation moyenne. L'ile a souffert d'une grosse crise bancaire en 2013 qui a blesse son economie. Elle s'en est bien remise, mais le chomage des jeunes reste autour de 13-14 %. Paradoxalement, meme les jeunes diplomes ont du mal a trouver a Chypre : 22 % d'entre eux sont sans emploi.</p>
+  <div class="pays-footer">
+    <span class="tendance" style="color:#06d6a0">↓ En baisse de 3.1 pts (3 derniers ans)</span>
+    <span class="neet-badge" style="border-color:#ff6b35;color:#ff6b35">9.4 % decrochés</span>
+    
+        <div class="ed-compare">
+          <div class="ed-row">
+            <span class="ed-label">Avec un diplome superieur</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:28%;background:#06d6a0"></div></div>
+            <span class="ed-val" style="color:#06d6a0">14 %</span>
+          </div>
+          <div class="ed-row">
+            <span class="ed-label">Sans diplome</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:35%;background:#ef233c"></div></div>
+            <span class="ed-val" style="color:#ef233c">18 %</span>
+          </div>
+        </div>
+  </div>
+</div>
+
+<div class="pays-card" id="DK">
+  <div class="pays-header">
+    <div class="pays-title">
+      <span class="pays-flag">&#127988;</span>
+      <h3>Danemark</h3>
+    </div>
+    <div class="pays-kpis">
+      <div class="kpi-main">
+        <span class="kpi-num" style="color:#00b4d8">14 %</span>
+        <span class="kpi-sub">de jeunes au chomage (2025)</span>
+      </div>
+      <span class="etiquette" style="background:#00b4d822;color:#00b4d8;border:1px solid #00b4d8">Correct</span>
+    </div>
+  </div>
+  <div class="barre-wrap">
+    <div class="barre" style="width:39%;background:linear-gradient(90deg,#00b4d888,#00b4d8)"></div>
+  </div>
+  <p class="pays-texte">Le Danemark affiche 14 % — un chiffre qui peut surprendre pour un pays si riche. En realite, le marche du travail danois est tres flexible : on embauche vite, mais on licencie vite aussi. Les jeunes alternent souvent entre petits boulots et periodes de chomage courtes, ce qui fait monter le chiffre sans que ce soit dramatique.</p>
+  <div class="pays-footer">
+    <span class="tendance" style="color:#ef233c">↑ En hausse de 2.3 pts (3 derniers ans)</span>
+    <span class="neet-badge" style="border-color:#06d6a0;color:#06d6a0">7.9 % decrochés</span>
+    
+        <div class="ed-compare">
+          <div class="ed-row">
+            <span class="ed-label">Avec un diplome superieur</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:28%;background:#06d6a0"></div></div>
+            <span class="ed-val" style="color:#06d6a0">14 %</span>
+          </div>
+          <div class="ed-row">
+            <span class="ed-label">Sans diplome</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:32%;background:#ef233c"></div></div>
+            <span class="ed-val" style="color:#ef233c">16 %</span>
+          </div>
+        </div>
+  </div>
+</div>
+
+<div class="pays-card" id="HU">
+  <div class="pays-header">
+    <div class="pays-title">
+      <span class="pays-flag">&#127988;</span>
+      <h3>Hongrie</h3>
+    </div>
+    <div class="pays-kpis">
+      <div class="kpi-main">
+        <span class="kpi-num" style="color:#00b4d8">14 %</span>
+        <span class="kpi-sub">de jeunes au chomage (2025)</span>
+      </div>
+      <span class="etiquette" style="background:#00b4d822;color:#00b4d8;border:1px solid #00b4d8">Correct</span>
+    </div>
+  </div>
+  <div class="barre-wrap">
+    <div class="barre" style="width:40%;background:linear-gradient(90deg,#00b4d888,#00b4d8)"></div>
+  </div>
+  <p class="pays-texte">La Hongrie a beaucoup ameliore sa situation depuis 2010 (de 26 % a 14 %). Le gouvernement a mis en place des programmes d'emploi public qui ont absorbe une partie des jeunes sans travail. Certains economistes nuancent ces chiffres, mais la tendance a la baisse est reelle.</p>
+  <div class="pays-footer">
+    <span class="tendance" style="color:#ef233c">↑ En hausse de 1.1 pts (3 derniers ans)</span>
+    <span class="neet-badge" style="border-color:#ff6b35;color:#ff6b35">9.5 % decrochés</span>
+    
+        <div class="ed-compare">
+          <div class="ed-row">
+            <span class="ed-label">Avec un diplome superieur</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:23%;background:#06d6a0"></div></div>
+            <span class="ed-val" style="color:#06d6a0">11 %</span>
+          </div>
+          <div class="ed-row">
+            <span class="ed-label">Sans diplome</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:47%;background:#ef233c"></div></div>
+            <span class="ed-val" style="color:#ef233c">24 %</span>
+          </div>
+        </div>
+  </div>
+</div>
+
+<div class="pays-card" id="LT">
+  <div class="pays-header">
+    <div class="pays-title">
+      <span class="pays-flag">&#127988;</span>
+      <h3>Lituanie</h3>
+    </div>
+    <div class="pays-kpis">
+      <div class="kpi-main">
+        <span class="kpi-num" style="color:#00b4d8">14 %</span>
+        <span class="kpi-sub">de jeunes au chomage (2025)</span>
+      </div>
+      <span class="etiquette" style="background:#00b4d822;color:#00b4d8;border:1px solid #00b4d8">Correct</span>
+    </div>
+  </div>
+  <div class="barre-wrap">
+    <div class="barre" style="width:40%;background:linear-gradient(90deg,#00b4d888,#00b4d8)"></div>
+  </div>
+  <p class="pays-texte">La Lituanie a realise une transformation spectaculaire : de 36 % en 2010 a 14 % aujourd'hui. C'est l'un des progres les plus importants d'Europe. Mais attention : le taux NEET (jeunes completement decrochés) reste eleve a 12,5 %. Ca signifie que les progres beneficient surtout aux jeunes qui cherchent activement, pas a tous.</p>
+  <div class="pays-footer">
+    <span class="tendance" style="color:#9e9e9e">→ Stable (3 derniers ans)</span>
+    <span class="neet-badge" style="border-color:#ff6b35;color:#ff6b35">12.5 % decrochés</span>
+    
+        <div class="ed-compare">
+          <div class="ed-row">
+            <span class="ed-label">Avec un diplome superieur</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:12%;background:#06d6a0"></div></div>
+            <span class="ed-val" style="color:#06d6a0">6 %</span>
+          </div>
+          <div class="ed-row">
+            <span class="ed-label">Sans diplome</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:97%;background:#ef233c"></div></div>
+            <span class="ed-val" style="color:#ef233c">48 %</span>
+          </div>
+        </div>
+  </div>
+</div>
+
+<div class="pays-card" id="LV">
+  <div class="pays-header">
+    <div class="pays-title">
+      <span class="pays-flag">&#127988;</span>
+      <h3>Lettonie</h3>
+    </div>
+    <div class="pays-kpis">
+      <div class="kpi-main">
+        <span class="kpi-num" style="color:#00b4d8">15 %</span>
+        <span class="kpi-sub">de jeunes au chomage (2025)</span>
+      </div>
+      <span class="etiquette" style="background:#00b4d822;color:#00b4d8;border:1px solid #00b4d8">Correct</span>
+    </div>
+  </div>
+  <div class="barre-wrap">
+    <div class="barre" style="width:42%;background:linear-gradient(90deg,#00b4d888,#00b4d8)"></div>
+  </div>
+  <p class="pays-texte">Meme histoire qu'en Lituanie voisine : enorme amelioration depuis 2010 (de 36 % a 15 %). Les pays baltes ont connu une croissance economique rapide grace a leur integration dans l'Union Europeenne et leur secteur tech dynamique. La Lettonie souffre aussi de beaucoup d'emigration de jeunes vers l'Ouest.</p>
+  <div class="pays-footer">
+    <span class="tendance" style="color:#ef233c">↑ En hausse de 2.5 pts (3 derniers ans)</span>
+    <span class="neet-badge" style="border-color:#ff6b35;color:#ff6b35">9.1 % decrochés</span>
+    
+        <div class="ed-compare">
+          <div class="ed-row">
+            <span class="ed-label">Avec un diplome superieur</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:36%;background:#06d6a0"></div></div>
+            <span class="ed-val" style="color:#06d6a0">18 %</span>
+          </div>
+          <div class="ed-row">
+            <span class="ed-label">Sans diplome</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:45%;background:#ef233c"></div></div>
+            <span class="ed-val" style="color:#ef233c">22 %</span>
+          </div>
+        </div>
+  </div>
+</div>
+
+<div class="pays-card" id="SK">
+  <div class="pays-header">
+    <div class="pays-title">
+      <span class="pays-flag">&#127988;</span>
+      <h3>Slovaquie</h3>
+    </div>
+    <div class="pays-kpis">
+      <div class="kpi-main">
+        <span class="kpi-num" style="color:#ff6b35">15 %</span>
+        <span class="kpi-sub">de jeunes au chomage (2025)</span>
+      </div>
+      <span class="etiquette" style="background:#ff6b3522;color:#ff6b35;border:1px solid #ff6b35">Difficile</span>
+    </div>
+  </div>
+  <div class="barre-wrap">
+    <div class="barre" style="width:44%;background:linear-gradient(90deg,#ff6b3588,#ff6b35)"></div>
+  </div>
+  <p class="pays-texte">La Slovaquie a progresse depuis 2010 (de 34 % a 15 %), mais reste inegale. Le gros probleme ici : sans diplome, c'est presque impossible — 55 % des jeunes sans diplome sont au chomage. C'est le taux le plus eleve d'Europe pour ce groupe. Avoir un bac ou plus change radicalement la donne en Slovaquie.</p>
+  <div class="pays-footer">
+    <span class="tendance" style="color:#06d6a0">↓ En baisse de 4.5 pts (3 derniers ans)</span>
+    <span class="neet-badge" style="border-color:#ff6b35;color:#ff6b35">8.0 % decrochés</span>
+    
+        <div class="ed-compare">
+          <div class="ed-row">
+            <span class="ed-label">Avec un diplome superieur</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:46%;background:#06d6a0"></div></div>
+            <span class="ed-val" style="color:#06d6a0">23 %</span>
+          </div>
+          <div class="ed-row">
+            <span class="ed-label">Sans diplome</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:71%;background:#ef233c"></div></div>
+            <span class="ed-val" style="color:#ef233c">35 %</span>
+          </div>
+        </div>
+  </div>
+</div>
+
+<div class="pays-card" id="BE">
+  <div class="pays-header">
+    <div class="pays-title">
+      <span class="pays-flag">&#127988;</span>
+      <h3>Belgique</h3>
+    </div>
+    <div class="pays-kpis">
+      <div class="kpi-main">
+        <span class="kpi-num" style="color:#ff6b35">17 %</span>
+        <span class="kpi-sub">de jeunes au chomage (2025)</span>
+      </div>
+      <span class="etiquette" style="background:#ff6b3522;color:#ff6b35;border:1px solid #ff6b35">Difficile</span>
+    </div>
+  </div>
+  <div class="barre-wrap">
+    <div class="barre" style="width:50%;background:linear-gradient(90deg,#ff6b3588,#ff6b35)"></div>
+  </div>
+  <p class="pays-texte">La Belgique affiche 17 % de chomage des jeunes, mais cache de grandes differences internes. En Flandre (nord), les jeunes trouvent facilement du travail. En Wallonie et a Bruxelles, c'est beaucoup plus dur. Un jeune bruxellois sans diplome fait partie des profils les plus en difficulte d'Europe occidentale.</p>
+  <div class="pays-footer">
+    <span class="tendance" style="color:#ef233c">↑ En hausse de 1.3 pts (3 derniers ans)</span>
+    <span class="neet-badge" style="border-color:#06d6a0;color:#06d6a0">7.4 % decrochés</span>
+    
+        <div class="ed-compare">
+          <div class="ed-row">
+            <span class="ed-label">Avec un diplome superieur</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:21%;background:#06d6a0"></div></div>
+            <span class="ed-val" style="color:#06d6a0">11 %</span>
+          </div>
+          <div class="ed-row">
+            <span class="ed-label">Sans diplome</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:57%;background:#ef233c"></div></div>
+            <span class="ed-val" style="color:#ef233c">28 %</span>
+          </div>
+        </div>
+  </div>
+</div>
+
+<div class="pays-card" id="HR">
+  <div class="pays-header">
+    <div class="pays-title">
+      <span class="pays-flag">&#127988;</span>
+      <h3>Croatie</h3>
+    </div>
+    <div class="pays-kpis">
+      <div class="kpi-main">
+        <span class="kpi-num" style="color:#ff6b35">18 %</span>
+        <span class="kpi-sub">de jeunes au chomage (2025)</span>
+      </div>
+      <span class="etiquette" style="background:#ff6b3522;color:#ff6b35;border:1px solid #ff6b35">Difficile</span>
+    </div>
+  </div>
+  <div class="barre-wrap">
+    <div class="barre" style="width:52%;background:linear-gradient(90deg,#ff6b3588,#ff6b35)"></div>
+  </div>
+  <p class="pays-texte">La Croatie a fait un effort remarquable depuis son entree dans l'UE en 2013 (de 33 % a 18 %). Le tourisme est le grand moteur : Dubrovnik et la cote dalmate emploient enormement de jeunes l'ete. Mais ce sont souvent des emplois saisonniers : en hiver, le chomage remonte. La stabilite reste un defi.</p>
+  <div class="pays-footer">
+    <span class="tendance" style="color:#06d6a0">↓ En baisse de 0.6 pts (3 derniers ans)</span>
+    <span class="neet-badge" style="border-color:#ff6b35;color:#ff6b35">9.0 % decrochés</span>
+    
+        <div class="ed-compare">
+          <div class="ed-row">
+            <span class="ed-label">Avec un diplome superieur</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:34%;background:#06d6a0"></div></div>
+            <span class="ed-val" style="color:#06d6a0">17 %</span>
+          </div>
+          <div class="ed-row">
+            <span class="ed-label">Sans diplome</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:62%;background:#ef233c"></div></div>
+            <span class="ed-val" style="color:#ef233c">31 %</span>
+          </div>
+        </div>
+  </div>
+</div>
+
+<div class="pays-card" id="EL">
+  <div class="pays-header">
+    <div class="pays-title">
+      <span class="pays-flag">&#127988;</span>
+      <h3>Grece</h3>
+    </div>
+    <div class="pays-kpis">
+      <div class="kpi-main">
+        <span class="kpi-num" style="color:#ff6b35">19 %</span>
+        <span class="kpi-sub">de jeunes au chomage (2025)</span>
+      </div>
+      <span class="etiquette" style="background:#ff6b3522;color:#ff6b35;border:1px solid #ff6b35">Difficile</span>
+    </div>
+  </div>
+  <div class="barre-wrap">
+    <div class="barre" style="width:55%;background:linear-gradient(90deg,#ff6b3588,#ff6b35)"></div>
+  </div>
+  <p class="pays-texte">La Grece a vecu la pire crise economique d'Europe apres 2010 : a un moment, 60 % des jeunes etaient au chomage. Aujourd'hui c'est 19 %, ce qui represente une amelioration reelle mais insuffisante. Le drame grec : meme les jeunes tres diplomes (40 % de chomage pour les titulaires d'un master ou d'une licence) n'arrivent pas a trouver de travail en Grece et emigrent en masse.</p>
+  <div class="pays-footer">
+    <span class="tendance" style="color:#06d6a0">↓ En baisse de 7.6 pts (3 derniers ans)</span>
+    <span class="neet-badge" style="border-color:#ff6b35;color:#ff6b35">9.4 % decrochés</span>
+    
+        <div class="ed-compare">
+          <div class="ed-row">
+            <span class="ed-label">Avec un diplome superieur</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:44%;background:#06d6a0"></div></div>
+            <span class="ed-val" style="color:#06d6a0">22 %</span>
+          </div>
+          <div class="ed-row">
+            <span class="ed-label">Sans diplome</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:62%;background:#ef233c"></div></div>
+            <span class="ed-val" style="color:#ef233c">31 %</span>
+          </div>
+        </div>
+  </div>
+</div>
+
+<div class="pays-card" id="PT">
+  <div class="pays-header">
+    <div class="pays-title">
+      <span class="pays-flag">&#127988;</span>
+      <h3>Portugal</h3>
+    </div>
+    <div class="pays-kpis">
+      <div class="kpi-main">
+        <span class="kpi-num" style="color:#ff6b35">20 %</span>
+        <span class="kpi-sub">de jeunes au chomage (2025)</span>
+      </div>
+      <span class="etiquette" style="background:#ff6b3522;color:#ff6b35;border:1px solid #ff6b35">Difficile</span>
+    </div>
+  </div>
+  <div class="barre-wrap">
+    <div class="barre" style="width:56%;background:linear-gradient(90deg,#ff6b3588,#ff6b35)"></div>
+  </div>
+  <p class="pays-texte">Le Portugal a vecu une crise tres dure entre 2011 et 2015 (plus d'un jeune sur trois au chomage). Il s'en est bien sorti depuis, tombant a 19-20 %. Mais meme les diplomes ont du mal : 25 % des jeunes avec un diplome superieur sont sans emploi, ce qui pousse beaucoup d'entre eux a partir au Royaume-Uni ou en France.</p>
+  <div class="pays-footer">
+    <span class="tendance" style="color:#06d6a0">↓ En baisse de 1.0 pts (3 derniers ans)</span>
+    <span class="neet-badge" style="border-color:#06d6a0;color:#06d6a0">6.9 % decrochés</span>
+    
+        <div class="ed-compare">
+          <div class="ed-row">
+            <span class="ed-label">Avec un diplome superieur</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:37%;background:#06d6a0"></div></div>
+            <span class="ed-val" style="color:#06d6a0">18 %</span>
+          </div>
+          <div class="ed-row">
+            <span class="ed-label">Sans diplome</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:64%;background:#ef233c"></div></div>
+            <span class="ed-val" style="color:#ef233c">32 %</span>
+          </div>
+        </div>
+  </div>
+</div>
+
+<div class="pays-card" id="FR">
+  <div class="pays-header">
+    <div class="pays-title">
+      <span class="pays-flag">&#127988;</span>
+      <h3>France</h3>
+    </div>
+    <div class="pays-kpis">
+      <div class="kpi-main">
+        <span class="kpi-num" style="color:#ff6b35">20 %</span>
+        <span class="kpi-sub">de jeunes au chomage (2025)</span>
+      </div>
+      <span class="etiquette" style="background:#ff6b3522;color:#ff6b35;border:1px solid #ff6b35">Difficile</span>
+    </div>
+  </div>
+  <div class="barre-wrap">
+    <div class="barre" style="width:56%;background:linear-gradient(90deg,#ff6b3588,#ff6b35)"></div>
+  </div>
+  <p class="pays-texte">En France, pres de 20 % des jeunes qui cherchent un emploi n'en trouvent pas. Concretement : dans une promotion de 20 jeunes diplomes qui postulent, 4 seront toujours sans emploi six mois plus tard. L'ecart est enorme selon le diplome : 13 % de chomage pour les diplomes du superieur, mais 35 % pour ceux sans bac. Avoir un diplome en France, c'est multiplier par 2,5 ses chances de trouver un travail.</p>
+  <div class="pays-footer">
+    <span class="tendance" style="color:#ef233c">↑ En hausse de 2.5 pts (3 derniers ans)</span>
+    <span class="neet-badge" style="border-color:#ff6b35;color:#ff6b35">10.8 % decrochés</span>
+    
+        <div class="ed-compare">
+          <div class="ed-row">
+            <span class="ed-label">Avec un diplome superieur</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:27%;background:#06d6a0"></div></div>
+            <span class="ed-val" style="color:#06d6a0">13 %</span>
+          </div>
+          <div class="ed-row">
+            <span class="ed-label">Sans diplome</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:67%;background:#ef233c"></div></div>
+            <span class="ed-val" style="color:#ef233c">33 %</span>
+          </div>
+        </div>
+  </div>
+</div>
+
+<div class="pays-card" id="IT">
+  <div class="pays-header">
+    <div class="pays-title">
+      <span class="pays-flag">&#127988;</span>
+      <h3>Italie</h3>
+    </div>
+    <div class="pays-kpis">
+      <div class="kpi-main">
+        <span class="kpi-num" style="color:#ef233c">21 %</span>
+        <span class="kpi-sub">de jeunes au chomage (2025)</span>
+      </div>
+      <span class="etiquette" style="background:#ef233c22;color:#ef233c;border:1px solid #ef233c">Tres difficile</span>
+    </div>
+  </div>
+  <div class="barre-wrap">
+    <div class="barre" style="width:59%;background:linear-gradient(90deg,#ef233c88,#ef233c)"></div>
+  </div>
+  <p class="pays-texte">L'Italie est le grand malade de l'Europe du sud pour l'emploi des jeunes. 20 % de chomage, et quasiment aucune amelioration depuis 2010. Le probleme de fond : les entreprises italiennes sont souvent familiales et petites, elles n'embauchent pas facilement. Un jeune Italien diplome a plus de chances de trouver un emploi a Paris ou a Berlin qu'a Rome ou Milan.</p>
+  <div class="pays-footer">
+    <span class="tendance" style="color:#06d6a0">↓ En baisse de 2.1 pts (3 derniers ans)</span>
+    <span class="neet-badge" style="border-color:#ff6b35;color:#ff6b35">9.9 % decrochés</span>
+    
+        <div class="ed-compare">
+          <div class="ed-row">
+            <span class="ed-label">Avec un diplome superieur</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:42%;background:#06d6a0"></div></div>
+            <span class="ed-val" style="color:#06d6a0">21 %</span>
+          </div>
+          <div class="ed-row">
+            <span class="ed-label">Sans diplome</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:54%;background:#ef233c"></div></div>
+            <span class="ed-val" style="color:#ef233c">27 %</span>
+          </div>
+        </div>
+  </div>
+</div>
+
+<div class="pays-card" id="EE">
+  <div class="pays-header">
+    <div class="pays-title">
+      <span class="pays-flag">&#127988;</span>
+      <h3>Estonie</h3>
+    </div>
+    <div class="pays-kpis">
+      <div class="kpi-main">
+        <span class="kpi-num" style="color:#ef233c">21 %</span>
+        <span class="kpi-sub">de jeunes au chomage (2025)</span>
+      </div>
+      <span class="etiquette" style="background:#ef233c22;color:#ef233c;border:1px solid #ef233c">Tres difficile</span>
+    </div>
+  </div>
+  <div class="barre-wrap">
+    <div class="barre" style="width:59%;background:linear-gradient(90deg,#ef233c88,#ef233c)"></div>
+  </div>
+  <p class="pays-texte">L'Estonie est connue comme le pays le plus numerique du monde — vote en ligne, administration 100 % digitale. Pourtant, le chomage des jeunes monte a 21 %, en hausse ces deux dernieres annees. La revolution numerique n'a pas protege les jeunes estoniens de la conjoncture economique difficile de la region baltique.</p>
+  <div class="pays-footer">
+    <span class="tendance" style="color:#ef233c">↑ En hausse de 3.4 pts (3 derniers ans)</span>
+    <span class="neet-badge" style="border-color:#ff6b35;color:#ff6b35">10.9 % decrochés</span>
+    
+        <div class="ed-compare">
+          <div class="ed-row">
+            <span class="ed-label">Avec un diplome superieur</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:33%;background:#06d6a0"></div></div>
+            <span class="ed-val" style="color:#06d6a0">16 %</span>
+          </div>
+          <div class="ed-row">
+            <span class="ed-label">Sans diplome</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:69%;background:#ef233c"></div></div>
+            <span class="ed-val" style="color:#ef233c">35 %</span>
+          </div>
+        </div>
+  </div>
+</div>
+
+<div class="pays-card" id="LU">
+  <div class="pays-header">
+    <div class="pays-title">
+      <span class="pays-flag">&#127988;</span>
+      <h3>Luxembourg</h3>
+    </div>
+    <div class="pays-kpis">
+      <div class="kpi-main">
+        <span class="kpi-num" style="color:#ef233c">22 %</span>
+        <span class="kpi-sub">de jeunes au chomage (2024)</span>
+      </div>
+      <span class="etiquette" style="background:#ef233c22;color:#ef233c;border:1px solid #ef233c">Tres difficile</span>
+    </div>
+  </div>
+  <div class="barre-wrap">
+    <div class="barre" style="width:62%;background:linear-gradient(90deg,#ef233c88,#ef233c)"></div>
+  </div>
+  <p class="pays-texte">Le Luxembourg est un cas particulier. C'est l'un des pays les plus riches du monde, pourtant son taux de chomage des jeunes monte a 22 %. Pourquoi ? Parce que beaucoup d'emplois qualifies sont occupes par des frontaliers (Belges, Francais, Allemands) qui font la navette. Les jeunes luxembourgeois doivent donc faire face a une concurrence internationale tres forte.</p>
+  <div class="pays-footer">
+    <span class="tendance" style="color:#ef233c">↑ En hausse de 4.0 pts (3 derniers ans)</span>
+    <span class="neet-badge" style="border-color:#06d6a0;color:#06d6a0">7.9 % decrochés</span>
+    
+        <div class="ed-compare">
+          <div class="ed-row">
+            <span class="ed-label">Avec un diplome superieur</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:23%;background:#06d6a0"></div></div>
+            <span class="ed-val" style="color:#06d6a0">12 %</span>
+          </div>
+          <div class="ed-row">
+            <span class="ed-label">Sans diplome</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:55%;background:#ef233c"></div></div>
+            <span class="ed-val" style="color:#ef233c">28 %</span>
+          </div>
+        </div>
+  </div>
+</div>
+
+<div class="pays-card" id="FI">
+  <div class="pays-header">
+    <div class="pays-title">
+      <span class="pays-flag">&#127988;</span>
+      <h3>Finlande</h3>
+    </div>
+    <div class="pays-kpis">
+      <div class="kpi-main">
+        <span class="kpi-num" style="color:#ef233c">22 %</span>
+        <span class="kpi-sub">de jeunes au chomage (2025)</span>
+      </div>
+      <span class="etiquette" style="background:#ef233c22;color:#ef233c;border:1px solid #ef233c">Tres difficile</span>
+    </div>
+  </div>
+  <div class="barre-wrap">
+    <div class="barre" style="width:62%;background:linear-gradient(90deg,#ef233c88,#ef233c)"></div>
+  </div>
+  <p class="pays-texte">La Finlande surprend avec 22 % — beaucoup pour un pays nordique tres riche. En partie, c'est parce que les Finlandais continuent leurs etudes tres longtemps et entrent tardivement sur le marche du travail. Les jeunes qui cherchent activement un emploi le trouvent generalement, mais la periode de recherche est plus longue qu'en Allemagne ou aux Pays-Bas.</p>
+  <div class="pays-footer">
+    <span class="tendance" style="color:#ef233c">↑ En hausse de 5.6 pts (3 derniers ans)</span>
+    <span class="neet-badge" style="border-color:#ff6b35;color:#ff6b35">9.3 % decrochés</span>
+    
+        <div class="ed-compare">
+          <div class="ed-row">
+            <span class="ed-label">Avec un diplome superieur</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:30%;background:#06d6a0"></div></div>
+            <span class="ed-val" style="color:#06d6a0">15 %</span>
+          </div>
+          <div class="ed-row">
+            <span class="ed-label">Sans diplome</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:60%;background:#ef233c"></div></div>
+            <span class="ed-val" style="color:#ef233c">30 %</span>
+          </div>
+        </div>
+  </div>
+</div>
+
+<div class="pays-card" id="SE">
+  <div class="pays-header">
+    <div class="pays-title">
+      <span class="pays-flag">&#127988;</span>
+      <h3>Suede</h3>
+    </div>
+    <div class="pays-kpis">
+      <div class="kpi-main">
+        <span class="kpi-num" style="color:#ef233c">24 %</span>
+        <span class="kpi-sub">de jeunes au chomage (2025)</span>
+      </div>
+      <span class="etiquette" style="background:#ef233c22;color:#ef233c;border:1px solid #ef233c">Tres difficile</span>
+    </div>
+  </div>
+  <div class="barre-wrap">
+    <div class="barre" style="width:69%;background:linear-gradient(90deg,#ef233c88,#ef233c)"></div>
+  </div>
+  <p class="pays-texte">La Suede affiche 24 % — un chiffre etonnant pour l'un des pays les plus riches d'Europe. L'explication : la Suede compte beaucoup d'etudiants qui cherchent un emploi a temps partiel et sont donc comptabilises dans les chomeurs. Autre facteur : l'integration des jeunes immigres dans le marche du travail reste difficile, ce qui tire le chiffre global vers le haut.</p>
+  <div class="pays-footer">
+    <span class="tendance" style="color:#ef233c">↑ En hausse de 2.2 pts (3 derniers ans)</span>
+    <span class="neet-badge" style="border-color:#06d6a0;color:#06d6a0">5.0 % decrochés</span>
+    
+        <div class="ed-compare">
+          <div class="ed-row">
+            <span class="ed-label">Avec un diplome superieur</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:27%;background:#06d6a0"></div></div>
+            <span class="ed-val" style="color:#06d6a0">14 %</span>
+          </div>
+          <div class="ed-row">
+            <span class="ed-label">Sans diplome</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:82%;background:#ef233c"></div></div>
+            <span class="ed-val" style="color:#ef233c">41 %</span>
+          </div>
+        </div>
+  </div>
+</div>
+
+<div class="pays-card" id="ES">
+  <div class="pays-header">
+    <div class="pays-title">
+      <span class="pays-flag">&#127988;</span>
+      <h3>Espagne</h3>
+    </div>
+    <div class="pays-kpis">
+      <div class="kpi-main">
+        <span class="kpi-num" style="color:#ef233c">25 %</span>
+        <span class="kpi-sub">de jeunes au chomage (2025)</span>
+      </div>
+      <span class="etiquette" style="background:#ef233c22;color:#ef233c;border:1px solid #ef233c">Tres difficile</span>
+    </div>
+  </div>
+  <div class="barre-wrap">
+    <div class="barre" style="width:71%;background:linear-gradient(90deg,#ef233c88,#ef233c)"></div>
+  </div>
+  <p class="pays-texte">L'Espagne est l'un des pays ou c'est le plus difficile pour les jeunes. Presque 1 jeune sur 4 est au chomage — imaginez une salle de classe de 24 eleves ou 6 ne trouveraient pas de travail apres leurs etudes. Bonne nouvelle : c'etait encore pire avant (42 % en 2013, pendant la crise). Mais 25 %, c'est encore trop. Beaucoup de jeunes Espagnols partent en Allemagne ou en France, emportant leur formation payee par l'Espagne avec eux.</p>
+  <div class="pays-footer">
+    <span class="tendance" style="color:#06d6a0">↓ En baisse de 3.8 pts (3 derniers ans)</span>
+    <span class="neet-badge" style="border-color:#ff6b35;color:#ff6b35">9.4 % decrochés</span>
+    
+        <div class="ed-compare">
+          <div class="ed-row">
+            <span class="ed-label">Avec un diplome superieur</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:38%;background:#06d6a0"></div></div>
+            <span class="ed-val" style="color:#06d6a0">19 %</span>
+          </div>
+          <div class="ed-row">
+            <span class="ed-label">Sans diplome</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:69%;background:#ef233c"></div></div>
+            <span class="ed-val" style="color:#ef233c">34 %</span>
+          </div>
+        </div>
+  </div>
+</div>
+
+<div class="pays-card" id="RO">
+  <div class="pays-header">
+    <div class="pays-title">
+      <span class="pays-flag">&#127988;</span>
+      <h3>Roumanie</h3>
+    </div>
+    <div class="pays-kpis">
+      <div class="kpi-main">
+        <span class="kpi-num" style="color:#ef233c">26 %</span>
+        <span class="kpi-sub">de jeunes au chomage (2025)</span>
+      </div>
+      <span class="etiquette" style="background:#ef233c22;color:#ef233c;border:1px solid #ef233c">Tres difficile</span>
+    </div>
+  </div>
+  <div class="barre-wrap">
+    <div class="barre" style="width:75%;background:linear-gradient(90deg,#ef233c88,#ef233c)"></div>
+  </div>
+  <p class="pays-texte">La Roumanie est la situation la plus preoccupante d'Europe avec 26 % — et le taux NEET le plus eleve (16,5 % de jeunes completement decrochés). Ce qui rend la situation unique : le chomage n'a pas baisse depuis 2010. La Roumanie a un probleme structurel : les regions rurales sont tres pauvres et isolees. Un jeune qui grandit dans un village roumain a tres peu d'acces a une formation ou a un employeur. C'est un probleme de geographie autant qu'un probleme economique.</p>
+  <div class="pays-footer">
+    <span class="tendance" style="color:#ef233c">↑ En hausse de 4.3 pts (3 derniers ans)</span>
+    <span class="neet-badge" style="border-color:#ef233c;color:#ef233c">16.5 % decrochés</span>
+    
+        <div class="ed-compare">
+          <div class="ed-row">
+            <span class="ed-label">Avec un diplome superieur</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:40%;background:#06d6a0"></div></div>
+            <span class="ed-val" style="color:#06d6a0">20 %</span>
+          </div>
+          <div class="ed-row">
+            <span class="ed-label">Sans diplome</span>
+            <div class="ed-bar-wrap"><div class="ed-bar" style="width:81%;background:#ef233c"></div></div>
+            <span class="ed-val" style="color:#ef233c">40 %</span>
+          </div>
+        </div>
+  </div>
+</div>
+</div>
+
+<!-- ══ SECTION 2 : MESSAGES CLES ══ -->
+<h2 class="section-title" style="margin-top:64px">Ce qu'on retient pour l'Europe</h2>
+<p class="section-intro">
+  Cinq idees simples, issues des donnees, sur l'emploi des jeunes et l'impact de l'intelligence artificielle.
+</p>
+
+<div class="messages">
+
+<div class="message-card" style="border-left:4px solid #06d6a0">
+  <div class="message-header">
+    <span class="message-icone">🎓</span>
+    <h3 style="color:#06d6a0">Le diplome, c'est votre meilleur bouclier</h3>
+  </div>
+  <p class="message-texte">En Europe, un jeune sans diplome a en moyenne <strong>3 fois plus de risques</strong> d'etre au chomage qu'un jeune avec un diplome superieur. En Slovaquie, 55 jeunes sans diplome sur 100 n'ont pas d'emploi. En France, ce ratio est de 1 pour 3 : le diplome multiplie par 2,5 les chances de trouver un travail. <br><br>Ce n'est pas une question d'intelligence. C'est une question de signal : les employeurs utilisent le diplome comme un filtre, surtout quand ils reccoivent des dizaines de CV.</p>
+</div>
+
+<div class="message-card" style="border-left:4px solid #ff6b35">
+  <div class="message-header">
+    <span class="message-icone">🤖</span>
+    <h3 style="color:#ff6b35">L'IA va detruire des emplois. Mais pas tous, et pas de la meme facon</h3>
+  </div>
+  <p class="message-texte">Les emplois les plus menaces par l'intelligence artificielle ? La comptabilite, la saisie de donnees, certains metiers de la finance, du droit et du conseil. Ce sont souvent des metiers qui recrutaient beaucoup de jeunes diplomes. <br><br>Les emplois les moins menaces ? Les metiers manuels complexes (plomberie, electricite, aide a la personne), et les metiers tres creatifs. Un robot peut rediger un rapport comptable. Il ne peut pas reparer une fuite d'eau chez vous. <br><br>Le paradoxe : les jeunes qui travaillent dans la tech (ceux qui <em>font</em> l'IA) sont aussi ceux qui risquent le plus d'etre remplaces par elle.</p>
+</div>
+
+<div class="message-card" style="border-left:4px solid #00b4d8">
+  <div class="message-header">
+    <span class="message-icone">🌍</span>
+    <h3 style="color:#00b4d8">L'Europe n'est pas un seul pays. Les ecarts sont enormes</h3>
+  </div>
+  <p class="message-texte">7 % de jeunes au chomage en Allemagne. 26 % en Roumanie. C'est comme comparer la salle de classe d'une ecole privee parisienne avec celle d'un lycee en zone difficile. Meme continent, monde different. <br><br>Ces ecarts ne sont pas pres de disparaitre. Les pays qui fonctionnent bien (Allemagne, Pays-Bas, Tcheque) ont mis des decennies a construire leurs systemes de formation professionnelle. On ne copie pas ca en quelques annees. <br><br>Et le probleme s'aggrave avec l'IA : les pays deja bien equipes vont adapter leurs travailleurs plus vite. Les autres risquent de prendre encore plus de retard.</p>
+</div>
+
+<div class="message-card" style="border-left:4px solid #9d4edd">
+  <div class="message-header">
+    <span class="message-icone">🚪</span>
+    <h3 style="color:#9d4edd">1 jeune sur 10 en Europe a ferme la porte. C'est le vrai probleme</h3>
+  </div>
+  <p class="message-texte">En Europe, 9 % des jeunes de 15-24 ans sont ce qu'on appelle des 'NEET' : ni au travail, ni en etudes, ni en formation. Ils ne cherchent meme plus. <br><br>En Roumanie, c'est 1 jeune sur 6. Imaginez : dans chaque classe de lycee, 2 ou 3 eleves vont completement decrocher apres l'ecole, sans filet de securite. <br><br>Ce groupe est le plus vulnerable face a l'IA. Ils n'ont pas de diplome, pas d'experience, pas de reseau. Quand des emplois peu qualifies disparaissent a cause de l'automatisation, ce sont eux qui le sentent en premier.</p>
+</div>
+
+<div class="message-card" style="border-left:4px solid #06d6a0">
+  <div class="message-header">
+    <span class="message-icone">📈</span>
+    <h3 style="color:#06d6a0">La bonne nouvelle : ca s'ameliore. Mais pas partout</h3>
+  </div>
+  <p class="message-texte">En 2010, la moyenne europeenne du chomage des jeunes etait bien au-dessus de 20 %. Aujourd'hui, elle est autour de <strong>15 %</strong>. Des pays comme l'Irlande, la Lituanie, la Lettonie et la Pologne ont fait des progres enormes. <br><br>Mais la Roumanie stagne. L'Italie n'avance pas. Et les crises (COVID en 2020, inflation en 2022) ont regulierement efface des annees de progres. <br><br>L'objectif de l'Union Europeenne est de reduire le taux NEET sous les 9 %. On n'y est pas encore. Et avec l'arrivee de l'IA, l'objectif risque de devenir plus difficile a atteindre, pas plus facile.</p>
+</div>
+</div>
+
+<footer>
+  Analyse basee sur les donnees Eurostat (lfsa_urgaed, edat_lfse_22) &bull;
+  Jeunes de 15 a 24 ans &bull; Derniere mise a jour des donnees : 2025
+</footer>
+
+</body>
+</html>

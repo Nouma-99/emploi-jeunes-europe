@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Les donnees sur l'emploi des jeunes en Europe -- Guide de lecture</title>
+<style>
+*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+body { background:#1e1e2e; color:#e0e0e0; font-family:"Segoe UI",Arial,sans-serif; font-size:14px; line-height:1.6; }
+
+/* ── Header ── */
+.site-header { background:#16162a; border-bottom:3px solid #00b4d8; padding:28px 40px; }
+.site-header h1 { font-size:22px; color:#fff; margin-bottom:6px; }
+.site-header .subtitle { color:#9e9e9e; font-size:13px; }
+.intro-global { background:#2a2a3e; border-left:4px solid #06d6a0; margin:0 40px 32px; padding:20px 24px; border-radius:0 8px 8px 0; line-height:1.8; }
+.intro-global p { margin-bottom:8px; }
+.intro-global p:last-child { margin:0; }
+.intro-global strong { color:#06d6a0; }
+
+/* ── Navigation ── */
+.nav { display:flex; gap:10px; flex-wrap:wrap; padding:20px 40px 0; }
+.nav a { background:#2a2a3e; color:#00b4d8; border:1px solid #3a3a4e; border-radius:20px; padding:6px 16px; font-size:12px; text-decoration:none; }
+.nav a:hover { background:#00b4d8; color:#fff; }
+
+/* ── Cards ── */
+.cards { padding:28px 40px; display:flex; flex-direction:column; gap:32px; }
+.card { background:#2a2a3e; border-radius:12px; overflow:hidden; }
+.card-top { padding:22px 28px 0; border-bottom:1px solid #3a3a4e; padding-bottom:16px; }
+.card h2 { font-size:17px; color:#fff; margin-bottom:4px; }
+.source { font-size:11px; color:#9e9e9e; }
+
+/* ── Intro box ── */
+.intro-box { background:#16162a; margin:20px 28px; padding:16px 20px; border-radius:8px; border-left:3px solid #ff6b35; }
+.intro-box p { font-size:13px; color:#e0e0e0; margin-bottom:8px; }
+.intro-box p:last-child { margin:0; }
+.pourquoi { color:#9e9e9e !important; }
+.pourquoi strong { color:#ff6b35; }
+
+/* ── Section label ── */
+.section-label { font-size:11px; text-transform:uppercase; letter-spacing:.8px; color:#9e9e9e; padding:20px 28px 10px; font-weight:600; }
+
+/* ── Tables ── */
+.table-wrap { overflow-x:auto; padding:0 28px 20px; }
+table { width:100%; border-collapse:collapse; font-size:12.5px; }
+thead tr { background:#16162a; }
+th { padding:10px 14px; text-align:left; font-weight:600; border-bottom:2px solid #3a3a4e; white-space:nowrap; }
+td { padding:9px 14px; border-bottom:1px solid #3a3a4e; vertical-align:top; }
+tbody tr:hover { background:rgba(255,255,255,.03); }
+
+/* ── Dict table ── */
+.dict th { color:#ff6b35; }
+.dict th:nth-child(1) { width:10%; }
+.dict th:nth-child(2) { width:16%; }
+.dict th:nth-child(3) { width:26%; }
+.dict th:nth-child(4) { width:48%; }
+.col-tech { font-family:monospace; font-size:12px; color:#00b4d8; font-weight:700; white-space:nowrap; }
+.col-nom  { color:#fff; font-weight:500; }
+.col-desc { color:#9e9e9e; font-size:12px; }
+.val-row  { display:flex; align-items:baseline; gap:6px; margin-bottom:5px; flex-wrap:wrap; }
+.val-code  { font-family:monospace; background:#16162a; border:1px solid #3a3a4e; border-radius:4px; padding:2px 8px; font-size:11px; color:#06d6a0; white-space:nowrap; }
+.val-arrow { color:#3a3a4e; font-size:11px; }
+.val-plain { font-size:12px; color:#e0e0e0; }
+
+/* ── Data preview table ── */
+.data th { color:#00b4d8; font-size:11px; }
+.data th small { display:block; color:#9e9e9e; font-weight:400; font-family:monospace; font-size:10px; margin-top:2px; }
+.translated { color:#e0e0e0; }
+.na { color:#ef233c; font-style:italic; font-size:11px; }
+.num { font-family:monospace; color:#06d6a0; text-align:right; }
+
+/* ── Stats table ── */
+.stats th { color:#06d6a0; }
+.sub { color:#9e9e9e; font-size:11px; }
+
+footer { text-align:center; padding:24px; color:#9e9e9e; font-size:11px; border-top:1px solid #3a3a4e; margin-top:8px; }
+</style>
+</head>
+<body>
+
+<div class="site-header">
+  <h1>L'emploi des jeunes en Europe &mdash; Guide de lecture des donnees</h1>
+  <p class="subtitle">Source : Eurostat &nbsp;|&nbsp; 4 tableaux de donnees &nbsp;|&nbsp; Pays europeens &nbsp;|&nbsp; 2010-2025</p>
+</div>
+
+<div class="intro-global">
+  <p>Ces donnees ont ete collectees par <strong>Eurostat</strong>, l'office statistique officiel de l'Union Europeenne, qui recense chaque annee des informations sur l'emploi dans tous les pays membres.</p>
+  <p>Elles permettent de repondre a des questions simples : <strong>Est-ce qu'avoir un diplome aide vraiment a trouver un travail ?</strong> Quels pays d'Europe ont le plus de jeunes au chomage ? Dans quels metiers les jeunes travaillent-ils aujourd'hui ?</p>
+  <p>Cette analyse s'interesse particulierement a l'impact de <strong>l'intelligence artificielle sur l'emploi des jeunes</strong> : certains secteurs sont plus menaces que d'autres par l'automatisation.</p>
+</div>
+
+<nav class="nav">
+  <a href="#emploi_education">Emploi selon le diplome</a>
+  <a href="#chomage_education">Chomage selon le diplome</a>
+  <a href="#neet">Jeunes decrocheurs (NEET)</a>
+  <a href="#emploi_secteur">Emploi par secteur</a>
+</nav>
+
+<div class="cards">
+  
+<section class="card">
+  <div class="card-top">
+    <div>
+      <h2>Qui travaille parmi les jeunes ? (selon leur diplome)</h2>
+      <p class="source">Eurostat lfsa_ergaed &nbsp;|&nbsp; 3 314 observations</p>
+    </div>
+  </div>
+  <div class="intro-box">
+    <p>Ce tableau montre, pour chaque pays europeen, quelle proportion des jeunes de 15 a 24 ans occupent un emploi, selon leur niveau d'etudes. Par exemple : en France en 2023, 70 % des jeunes diplomes du superieur avaient un emploi, contre 30 % seulement pour ceux sans diplome.</p>
+    <p class="pourquoi"><strong>Pourquoi c'est utile :</strong> Ces donnees permettent de mesurer la valeur du diplome sur le marche du travail et de comparer les situations entre pays.</p>
+  </div>
+  
+    <div class="section-label">Que signifie chaque colonne ?</div>
+    <div class="table-wrap">
+    <table class="dict">
+      <thead><tr>
+        <th>Nom technique</th>
+        <th>Ce que ca veut dire</th>
+        <th>Question a laquelle ca repond</th>
+        <th>Valeurs possibles</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td class="col-tech">freq</td>
+          <td class="col-nom">Frequence de mesure</td>
+          <td class="col-desc">A quelle frequence la mesure est-elle realisee ?</td>
+          <td><div class="val-row"><span class="val-code">A</span><span class="val-arrow">&#8594;</span><span class="val-plain">Une fois par an</span></div></td>
+        </tr>
+        <tr>
+          <td class="col-tech">unit</td>
+          <td class="col-nom">Unite de mesure</td>
+          <td class="col-desc">Dans quelle unite est exprimee la valeur ?</td>
+          <td><div class="val-row"><span class="val-code">PC</span><span class="val-arrow">&#8594;</span><span class="val-plain">En pourcentage (ex. 14,5 %)</span></div><div class="val-row"><span class="val-code">PC_ACT</span><span class="val-arrow">&#8594;</span><span class="val-plain">En % des personnes qui cherchent ou ont un emploi</span></div><div class="val-row"><span class="val-code">PC_POP</span><span class="val-arrow">&#8594;</span><span class="val-plain">En % de toute la population de cet age</span></div><div class="val-row"><span class="val-code">THS_PER</span><span class="val-arrow">&#8594;</span><span class="val-plain">En milliers de personnes (ex. 320 = 320 000 personnes)</span></div></td>
+        </tr>
+        <tr>
+          <td class="col-tech">sex</td>
+          <td class="col-nom">Genre</td>
+          <td class="col-desc">Quel groupe de genre est concerne ?</td>
+          <td><div class="val-row"><span class="val-code">T</span><span class="val-arrow">&#8594;</span><span class="val-plain">Hommes et femmes ensemble</span></div><div class="val-row"><span class="val-code">M</span><span class="val-arrow">&#8594;</span><span class="val-plain">Hommes uniquement</span></div><div class="val-row"><span class="val-code">F</span><span class="val-arrow">&#8594;</span><span class="val-plain">Femmes uniquement</span></div></td>
+        </tr>
+        <tr>
+          <td class="col-tech">age</td>
+          <td class="col-nom">Tranche d'age</td>
+          <td class="col-desc">Quelle tranche d'age est observee ?</td>
+          <td><div class="val-row"><span class="val-code">Y15-24</span><span class="val-arrow">&#8594;</span><span class="val-plain">15 a 24 ans</span></div><div class="val-row"><span class="val-code">Y15-29</span><span class="val-arrow">&#8594;</span><span class="val-plain">15 a 29 ans</span></div><div class="val-row"><span class="val-code">Y25-34</span><span class="val-arrow">&#8594;</span><span class="val-plain">25 a 34 ans</span></div></td>
+        </tr>
+        <tr>
+          <td class="col-tech">isced11</td>
+          <td class="col-nom">Niveau d'etudes</td>
+          <td class="col-desc">Quel est le diplome le plus eleve obtenu par la personne ?</td>
+          <td><div class="val-row"><span class="val-code">ED0-2</span><span class="val-arrow">&#8594;</span><span class="val-plain">Sans diplome ou brevet des colleges</span></div><div class="val-row"><span class="val-code">ED3_4</span><span class="val-arrow">&#8594;</span><span class="val-plain">Baccalaureat (general, techno ou pro)</span></div><div class="val-row"><span class="val-code">ED34_44</span><span class="val-arrow">&#8594;</span><span class="val-plain">Bac general ou technologique</span></div><div class="val-row"><span class="val-code">ED35_45</span><span class="val-arrow">&#8594;</span><span class="val-plain">Bac professionnel</span></div><div class="val-row"><span class="val-code">ED5-8</span><span class="val-arrow">&#8594;</span><span class="val-plain">Etudes superieures : BTS, Licence, Master, Doctorat</span></div><div class="val-row"><span class="val-code">NRP</span><span class="val-arrow">&#8594;</span><span class="val-plain">Information non disponible</span></div><div class="val-row"><span class="val-code">TOTAL</span><span class="val-arrow">&#8594;</span><span class="val-plain">Tous diplomes confondus</span></div></td>
+        </tr>
+        <tr>
+          <td class="col-tech">geo</td>
+          <td class="col-nom">Pays</td>
+          <td class="col-desc">Quel pays ou zone geographique est concerne ?</td>
+          <td><div class="val-row"><span class="val-code">EU27_2020</span><span class="val-arrow">&#8594;</span><span class="val-plain">Moyenne des 27 pays de l'Union Europeenne</span></div><div class="val-row"><span class="val-code">FR</span><span class="val-arrow">&#8594;</span><span class="val-plain">France</span></div><div class="val-row"><span class="val-code">DE</span><span class="val-arrow">&#8594;</span><span class="val-plain">Allemagne</span></div><div class="val-row"><span class="val-code">IT</span><span class="val-arrow">&#8594;</span><span class="val-plain">Italie</span></div><div class="val-row"><span class="val-code">ES</span><span class="val-arrow">&#8594;</span><span class="val-plain">Espagne</span></div><div class="val-row"><span class="val-code">EL</span><span class="val-arrow">&#8594;</span><span class="val-plain">Grece</span></div><div class="val-row"><span class="val-code">PL</span><span class="val-arrow">&#8594;</span><span class="val-plain">Pologne</span></div><div class="val-row"><span class="val-code">...</span><span class="val-arrow">&#8594;</span><span class="val-plain">(et tous les autres pays europeens)</span></div></td>
+        </tr>
+        <tr>
+          <td class="col-tech">time</td>
+          <td class="col-nom">Annee</td>
+          <td class="col-desc">Pour quelle annee cette mesure a-t-elle ete faite ?</td>
+          <td><div class="val-row"><span class="val-code">2010</span><span class="val-arrow">&#8594;</span><span class="val-plain">Debut de la serie de donnees</span></div><div class="val-row"><span class="val-code">2020</span><span class="val-arrow">&#8594;</span><span class="val-plain">Annee du COVID-19 (forte perturbation)</span></div><div class="val-row"><span class="val-code">2025</span><span class="val-arrow">&#8594;</span><span class="val-plain">Annee la plus recente disponible</span></div></td>
+        </tr>
+        <tr>
+          <td class="col-tech">value</td>
+          <td class="col-nom">Valeur mesuree</td>
+          <td class="col-desc">Le chiffre lui-meme : le taux ou le nombre mesure. Peut etre vide si la donnee n'est pas disponible.</td>
+          <td><div class="val-row"><span class="val-code">ex. 14.5</span><span class="val-arrow">&#8594;</span><span class="val-plain">14,5 % de jeunes au chomage dans ce pays cette annee-la</span></div><div class="val-row"><span class="val-code">ex. 320.0</span><span class="val-arrow">&#8594;</span><span class="val-plain">320 000 jeunes employes dans ce secteur</span></div><div class="val-row"><span class="val-code">vide</span><span class="val-arrow">&#8594;</span><span class="val-plain">Donnee non disponible ou non communiquee par le pays</span></div></td>
+        </tr></tbody>
+    </table>
+    </div>
+  
+    <div class="section-label">Les 10 premieres lignes du fichier</div>
+    <div class="table-wrap">
+    <table class="data">
+      <thead><tr><th>Frequence de mesure<br><small>freq</small></th><th>Unite<br><small>unit</small></th><th>Genre<br><small>sex</small></th><th>Tranche d'age<br><small>age</small></th><th>Niveau d'etudes<br><small>isced11</small></th><th>Pays<br><small>geo</small></th><th>Annee<br><small>time</small></th><th>Valeur mesuree<br><small>value</small></th></tr></thead>
+      <tbody><tr><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="PC">Pourcentage (%)</span></td><td><span class="translated" title="T">Tous (hommes + femmes)</span></td><td><span class="translated" title="Y15-24">15 a 24 ans</span></td><td><span class="translated" title="ED0-2">Sans diplome ou brevet</span></td><td><span class="translated" title="AT">Autriche</span></td><td>2010</td><td class="num">37.3</td></tr><tr><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="PC">Pourcentage (%)</span></td><td><span class="translated" title="T">Tous (hommes + femmes)</span></td><td><span class="translated" title="Y15-24">15 a 24 ans</span></td><td><span class="translated" title="ED0-2">Sans diplome ou brevet</span></td><td><span class="translated" title="AT">Autriche</span></td><td>2011</td><td class="num">38.4</td></tr><tr><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="PC">Pourcentage (%)</span></td><td><span class="translated" title="T">Tous (hommes + femmes)</span></td><td><span class="translated" title="Y15-24">15 a 24 ans</span></td><td><span class="translated" title="ED0-2">Sans diplome ou brevet</span></td><td><span class="translated" title="AT">Autriche</span></td><td>2012</td><td class="num">37.3</td></tr><tr><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="PC">Pourcentage (%)</span></td><td><span class="translated" title="T">Tous (hommes + femmes)</span></td><td><span class="translated" title="Y15-24">15 a 24 ans</span></td><td><span class="translated" title="ED0-2">Sans diplome ou brevet</span></td><td><span class="translated" title="AT">Autriche</span></td><td>2013</td><td class="num">35.6</td></tr><tr><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="PC">Pourcentage (%)</span></td><td><span class="translated" title="T">Tous (hommes + femmes)</span></td><td><span class="translated" title="Y15-24">15 a 24 ans</span></td><td><span class="translated" title="ED0-2">Sans diplome ou brevet</span></td><td><span class="translated" title="AT">Autriche</span></td><td>2014</td><td class="num">36.7</td></tr><tr><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="PC">Pourcentage (%)</span></td><td><span class="translated" title="T">Tous (hommes + femmes)</span></td><td><span class="translated" title="Y15-24">15 a 24 ans</span></td><td><span class="translated" title="ED0-2">Sans diplome ou brevet</span></td><td><span class="translated" title="AT">Autriche</span></td><td>2015</td><td class="num">36.7</td></tr><tr><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="PC">Pourcentage (%)</span></td><td><span class="translated" title="T">Tous (hommes + femmes)</span></td><td><span class="translated" title="Y15-24">15 a 24 ans</span></td><td><span class="translated" title="ED0-2">Sans diplome ou brevet</span></td><td><span class="translated" title="AT">Autriche</span></td><td>2016</td><td class="num">34.6</td></tr><tr><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="PC">Pourcentage (%)</span></td><td><span class="translated" title="T">Tous (hommes + femmes)</span></td><td><span class="translated" title="Y15-24">15 a 24 ans</span></td><td><span class="translated" title="ED0-2">Sans diplome ou brevet</span></td><td><span class="translated" title="AT">Autriche</span></td><td>2017</td><td class="num">33.5</td></tr><tr><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="PC">Pourcentage (%)</span></td><td><span class="translated" title="T">Tous (hommes + femmes)</span></td><td><span class="translated" title="Y15-24">15 a 24 ans</span></td><td><span class="translated" title="ED0-2">Sans diplome ou brevet</span></td><td><span class="translated" title="AT">Autriche</span></td><td>2018</td><td class="num">34.8</td></tr><tr><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="PC">Pourcentage (%)</span></td><td><span class="translated" title="T">Tous (hommes + femmes)</span></td><td><span class="translated" title="Y15-24">15 a 24 ans</span></td><td><span class="translated" title="ED0-2">Sans diplome ou brevet</span></td><td><span class="translated" title="AT">Autriche</span></td><td>2019</td><td class="num">34.5</td></tr></tbody>
+    </table>
+    </div>
+  
+    <div class="section-label">Chiffres cles (sur l'ensemble du fichier)</div>
+    <div class="table-wrap">
+    <table class="stats">
+      <thead><tr><th>Indicateur</th><th>Valeur minimale</th><th>Valeur maximale</th><th>Valeur moyenne</th><th>Unite</th></tr></thead>
+      <tbody><tr><td class='col-nom'>Valeur mesuree</td><td class='num'>0.9</td><td class='num'>98.6</td><td class='num'>41.1</td><td class='sub'>Pourcentage (%)</td></tr></tbody>
+    </table>
+    </div>
+</section>
+
+<section class="card">
+  <div class="card-top">
+    <div>
+      <h2>Combien de jeunes sont au chomage ? (selon leur diplome)</h2>
+      <p class="source">Eurostat lfsa_urgaed &nbsp;|&nbsp; 3 028 observations</p>
+    </div>
+  </div>
+  <div class="intro-box">
+    <p>Ce tableau indique le taux de chomage des jeunes de 15 a 24 ans selon leur niveau d'etudes, dans chaque pays europeen. Un taux de 20 % signifie que 20 jeunes sur 100 en recherche d'emploi ne trouvent pas de travail.</p>
+    <p class="pourquoi"><strong>Pourquoi c'est utile :</strong> C'est l'un des indicateurs les plus suivis par les gouvernements pour mesurer les difficultes d'insertion des jeunes sur le marche du travail.</p>
+  </div>
+  
+    <div class="section-label">Que signifie chaque colonne ?</div>
+    <div class="table-wrap">
+    <table class="dict">
+      <thead><tr>
+        <th>Nom technique</th>
+        <th>Ce que ca veut dire</th>
+        <th>Question a laquelle ca repond</th>
+        <th>Valeurs possibles</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td class="col-tech">freq</td>
+          <td class="col-nom">Frequence de mesure</td>
+          <td class="col-desc">A quelle frequence la mesure est-elle realisee ?</td>
+          <td><div class="val-row"><span class="val-code">A</span><span class="val-arrow">&#8594;</span><span class="val-plain">Une fois par an</span></div></td>
+        </tr>
+        <tr>
+          <td class="col-tech">unit</td>
+          <td class="col-nom">Unite de mesure</td>
+          <td class="col-desc">Dans quelle unite est exprimee la valeur ?</td>
+          <td><div class="val-row"><span class="val-code">PC</span><span class="val-arrow">&#8594;</span><span class="val-plain">En pourcentage (ex. 14,5 %)</span></div><div class="val-row"><span class="val-code">PC_ACT</span><span class="val-arrow">&#8594;</span><span class="val-plain">En % des personnes qui cherchent ou ont un emploi</span></div><div class="val-row"><span class="val-code">PC_POP</span><span class="val-arrow">&#8594;</span><span class="val-plain">En % de toute la population de cet age</span></div><div class="val-row"><span class="val-code">THS_PER</span><span class="val-arrow">&#8594;</span><span class="val-plain">En milliers de personnes (ex. 320 = 320 000 personnes)</span></div></td>
+        </tr>
+        <tr>
+          <td class="col-tech">sex</td>
+          <td class="col-nom">Genre</td>
+          <td class="col-desc">Quel groupe de genre est concerne ?</td>
+          <td><div class="val-row"><span class="val-code">T</span><span class="val-arrow">&#8594;</span><span class="val-plain">Hommes et femmes ensemble</span></div><div class="val-row"><span class="val-code">M</span><span class="val-arrow">&#8594;</span><span class="val-plain">Hommes uniquement</span></div><div class="val-row"><span class="val-code">F</span><span class="val-arrow">&#8594;</span><span class="val-plain">Femmes uniquement</span></div></td>
+        </tr>
+        <tr>
+          <td class="col-tech">age</td>
+          <td class="col-nom">Tranche d'age</td>
+          <td class="col-desc">Quelle tranche d'age est observee ?</td>
+          <td><div class="val-row"><span class="val-code">Y15-24</span><span class="val-arrow">&#8594;</span><span class="val-plain">15 a 24 ans</span></div><div class="val-row"><span class="val-code">Y15-29</span><span class="val-arrow">&#8594;</span><span class="val-plain">15 a 29 ans</span></div><div class="val-row"><span class="val-code">Y25-34</span><span class="val-arrow">&#8594;</span><span class="val-plain">25 a 34 ans</span></div></td>
+        </tr>
+        <tr>
+          <td class="col-tech">isced11</td>
+          <td class="col-nom">Niveau d'etudes</td>
+          <td class="col-desc">Quel est le diplome le plus eleve obtenu par la personne ?</td>
+          <td><div class="val-row"><span class="val-code">ED0-2</span><span class="val-arrow">&#8594;</span><span class="val-plain">Sans diplome ou brevet des colleges</span></div><div class="val-row"><span class="val-code">ED3_4</span><span class="val-arrow">&#8594;</span><span class="val-plain">Baccalaureat (general, techno ou pro)</span></div><div class="val-row"><span class="val-code">ED34_44</span><span class="val-arrow">&#8594;</span><span class="val-plain">Bac general ou technologique</span></div><div class="val-row"><span class="val-code">ED35_45</span><span class="val-arrow">&#8594;</span><span class="val-plain">Bac professionnel</span></div><div class="val-row"><span class="val-code">ED5-8</span><span class="val-arrow">&#8594;</span><span class="val-plain">Etudes superieures : BTS, Licence, Master, Doctorat</span></div><div class="val-row"><span class="val-code">NRP</span><span class="val-arrow">&#8594;</span><span class="val-plain">Information non disponible</span></div><div class="val-row"><span class="val-code">TOTAL</span><span class="val-arrow">&#8594;</span><span class="val-plain">Tous diplomes confondus</span></div></td>
+        </tr>
+        <tr>
+          <td class="col-tech">geo</td>
+          <td class="col-nom">Pays</td>
+          <td class="col-desc">Quel pays ou zone geographique est concerne ?</td>
+          <td><div class="val-row"><span class="val-code">EU27_2020</span><span class="val-arrow">&#8594;</span><span class="val-plain">Moyenne des 27 pays de l'Union Europeenne</span></div><div class="val-row"><span class="val-code">FR</span><span class="val-arrow">&#8594;</span><span class="val-plain">France</span></div><div class="val-row"><span class="val-code">DE</span><span class="val-arrow">&#8594;</span><span class="val-plain">Allemagne</span></div><div class="val-row"><span class="val-code">IT</span><span class="val-arrow">&#8594;</span><span class="val-plain">Italie</span></div><div class="val-row"><span class="val-code">ES</span><span class="val-arrow">&#8594;</span><span class="val-plain">Espagne</span></div><div class="val-row"><span class="val-code">EL</span><span class="val-arrow">&#8594;</span><span class="val-plain">Grece</span></div><div class="val-row"><span class="val-code">PL</span><span class="val-arrow">&#8594;</span><span class="val-plain">Pologne</span></div><div class="val-row"><span class="val-code">...</span><span class="val-arrow">&#8594;</span><span class="val-plain">(et tous les autres pays europeens)</span></div></td>
+        </tr>
+        <tr>
+          <td class="col-tech">time</td>
+          <td class="col-nom">Annee</td>
+          <td class="col-desc">Pour quelle annee cette mesure a-t-elle ete faite ?</td>
+          <td><div class="val-row"><span class="val-code">2010</span><span class="val-arrow">&#8594;</span><span class="val-plain">Debut de la serie de donnees</span></div><div class="val-row"><span class="val-code">2020</span><span class="val-arrow">&#8594;</span><span class="val-plain">Annee du COVID-19 (forte perturbation)</span></div><div class="val-row"><span class="val-code">2025</span><span class="val-arrow">&#8594;</span><span class="val-plain">Annee la plus recente disponible</span></div></td>
+        </tr>
+        <tr>
+          <td class="col-tech">value</td>
+          <td class="col-nom">Valeur mesuree</td>
+          <td class="col-desc">Le chiffre lui-meme : le taux ou le nombre mesure. Peut etre vide si la donnee n'est pas disponible.</td>
+          <td><div class="val-row"><span class="val-code">ex. 14.5</span><span class="val-arrow">&#8594;</span><span class="val-plain">14,5 % de jeunes au chomage dans ce pays cette annee-la</span></div><div class="val-row"><span class="val-code">ex. 320.0</span><span class="val-arrow">&#8594;</span><span class="val-plain">320 000 jeunes employes dans ce secteur</span></div><div class="val-row"><span class="val-code">vide</span><span class="val-arrow">&#8594;</span><span class="val-plain">Donnee non disponible ou non communiquee par le pays</span></div></td>
+        </tr></tbody>
+    </table>
+    </div>
+  
+    <div class="section-label">Les 10 premieres lignes du fichier</div>
+    <div class="table-wrap">
+    <table class="data">
+      <thead><tr><th>Frequence de mesure<br><small>freq</small></th><th>Unite<br><small>unit</small></th><th>Genre<br><small>sex</small></th><th>Tranche d'age<br><small>age</small></th><th>Niveau d'etudes<br><small>isced11</small></th><th>Pays<br><small>geo</small></th><th>Annee<br><small>time</small></th><th>Valeur mesuree<br><small>value</small></th></tr></thead>
+      <tbody><tr><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="PC">Pourcentage (%)</span></td><td><span class="translated" title="T">Tous (hommes + femmes)</span></td><td><span class="translated" title="Y15-24">15 a 24 ans</span></td><td><span class="translated" title="ED0-2">Sans diplome ou brevet</span></td><td><span class="translated" title="AT">Autriche</span></td><td>2010</td><td class="num">12.6</td></tr><tr><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="PC">Pourcentage (%)</span></td><td><span class="translated" title="T">Tous (hommes + femmes)</span></td><td><span class="translated" title="Y15-24">15 a 24 ans</span></td><td><span class="translated" title="ED0-2">Sans diplome ou brevet</span></td><td><span class="translated" title="AT">Autriche</span></td><td>2011</td><td class="num">12.8</td></tr><tr><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="PC">Pourcentage (%)</span></td><td><span class="translated" title="T">Tous (hommes + femmes)</span></td><td><span class="translated" title="Y15-24">15 a 24 ans</span></td><td><span class="translated" title="ED0-2">Sans diplome ou brevet</span></td><td><span class="translated" title="AT">Autriche</span></td><td>2012</td><td class="num">13.3</td></tr><tr><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="PC">Pourcentage (%)</span></td><td><span class="translated" title="T">Tous (hommes + femmes)</span></td><td><span class="translated" title="Y15-24">15 a 24 ans</span></td><td><span class="translated" title="ED0-2">Sans diplome ou brevet</span></td><td><span class="translated" title="AT">Autriche</span></td><td>2013</td><td class="num">13.3</td></tr><tr><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="PC">Pourcentage (%)</span></td><td><span class="translated" title="T">Tous (hommes + femmes)</span></td><td><span class="translated" title="Y15-24">15 a 24 ans</span></td><td><span class="translated" title="ED0-2">Sans diplome ou brevet</span></td><td><span class="translated" title="AT">Autriche</span></td><td>2014</td><td class="num">14.4</td></tr><tr><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="PC">Pourcentage (%)</span></td><td><span class="translated" title="T">Tous (hommes + femmes)</span></td><td><span class="translated" title="Y15-24">15 a 24 ans</span></td><td><span class="translated" title="ED0-2">Sans diplome ou brevet</span></td><td><span class="translated" title="AT">Autriche</span></td><td>2015</td><td class="num">13.7</td></tr><tr><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="PC">Pourcentage (%)</span></td><td><span class="translated" title="T">Tous (hommes + femmes)</span></td><td><span class="translated" title="Y15-24">15 a 24 ans</span></td><td><span class="translated" title="ED0-2">Sans diplome ou brevet</span></td><td><span class="translated" title="AT">Autriche</span></td><td>2016</td><td class="num">16.8</td></tr><tr><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="PC">Pourcentage (%)</span></td><td><span class="translated" title="T">Tous (hommes + femmes)</span></td><td><span class="translated" title="Y15-24">15 a 24 ans</span></td><td><span class="translated" title="ED0-2">Sans diplome ou brevet</span></td><td><span class="translated" title="AT">Autriche</span></td><td>2017</td><td class="num">15.8</td></tr><tr><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="PC">Pourcentage (%)</span></td><td><span class="translated" title="T">Tous (hommes + femmes)</span></td><td><span class="translated" title="Y15-24">15 a 24 ans</span></td><td><span class="translated" title="ED0-2">Sans diplome ou brevet</span></td><td><span class="translated" title="AT">Autriche</span></td><td>2018</td><td class="num">13.9</td></tr><tr><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="PC">Pourcentage (%)</span></td><td><span class="translated" title="T">Tous (hommes + femmes)</span></td><td><span class="translated" title="Y15-24">15 a 24 ans</span></td><td><span class="translated" title="ED0-2">Sans diplome ou brevet</span></td><td><span class="translated" title="AT">Autriche</span></td><td>2019</td><td class="num">13.2</td></tr></tbody>
+    </table>
+    </div>
+  
+    <div class="section-label">Chiffres cles (sur l'ensemble du fichier)</div>
+    <div class="table-wrap">
+    <table class="stats">
+      <thead><tr><th>Indicateur</th><th>Valeur minimale</th><th>Valeur maximale</th><th>Valeur moyenne</th><th>Unite</th></tr></thead>
+      <tbody><tr><td class='col-nom'>Valeur mesuree</td><td class='num'>2.9</td><td class='num'>75.2</td><td class='num'>20.5</td><td class='sub'>Pourcentage (%)</td></tr></tbody>
+    </table>
+    </div>
+</section>
+
+<section class="card">
+  <div class="card-top">
+    <div>
+      <h2>Les jeunes ni en emploi, ni en formation (NEET)</h2>
+      <p class="source">Eurostat edat_lfse_22 &nbsp;|&nbsp; 14 395 observations</p>
+    </div>
+  </div>
+  <div class="intro-box">
+    <p>Le terme 'NEET' designe les jeunes qui ne travaillent pas, ne sont pas en etudes et ne suivent aucune formation. C'est une mesure large du decrochage des jeunes. Un taux NEET de 15 % signifie que 15 jeunes sur 100 sont dans cette situation.</p>
+    <p class="pourquoi"><strong>Pourquoi c'est utile :</strong> C'est un signal d'alerte social important : un jeune NEET risque de s'eloigner durablement du marche du travail et de perdre en competences.</p>
+  </div>
+  
+    <div class="section-label">Que signifie chaque colonne ?</div>
+    <div class="table-wrap">
+    <table class="dict">
+      <thead><tr>
+        <th>Nom technique</th>
+        <th>Ce que ca veut dire</th>
+        <th>Question a laquelle ca repond</th>
+        <th>Valeurs possibles</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td class="col-tech">freq</td>
+          <td class="col-nom">Frequence de mesure</td>
+          <td class="col-desc">A quelle frequence la mesure est-elle realisee ?</td>
+          <td><div class="val-row"><span class="val-code">A</span><span class="val-arrow">&#8594;</span><span class="val-plain">Une fois par an</span></div></td>
+        </tr>
+        <tr>
+          <td class="col-tech">sex</td>
+          <td class="col-nom">Genre</td>
+          <td class="col-desc">Quel groupe de genre est concerne ?</td>
+          <td><div class="val-row"><span class="val-code">T</span><span class="val-arrow">&#8594;</span><span class="val-plain">Hommes et femmes ensemble</span></div><div class="val-row"><span class="val-code">M</span><span class="val-arrow">&#8594;</span><span class="val-plain">Hommes uniquement</span></div><div class="val-row"><span class="val-code">F</span><span class="val-arrow">&#8594;</span><span class="val-plain">Femmes uniquement</span></div></td>
+        </tr>
+        <tr>
+          <td class="col-tech">age</td>
+          <td class="col-nom">Tranche d'age</td>
+          <td class="col-desc">Quelle tranche d'age est observee ?</td>
+          <td><div class="val-row"><span class="val-code">Y15-24</span><span class="val-arrow">&#8594;</span><span class="val-plain">15 a 24 ans</span></div><div class="val-row"><span class="val-code">Y15-29</span><span class="val-arrow">&#8594;</span><span class="val-plain">15 a 29 ans</span></div><div class="val-row"><span class="val-code">Y25-34</span><span class="val-arrow">&#8594;</span><span class="val-plain">25 a 34 ans</span></div></td>
+        </tr>
+        <tr>
+          <td class="col-tech">training</td>
+          <td class="col-nom">En formation ?</td>
+          <td class="col-desc">Le jeune suit-il une formation en parallele ? (specifique aux donnees NEET)</td>
+          <td><div class="val-row"><span class="val-code">NO_FE_NO_NFE</span><span class="val-arrow">&#8594;</span><span class="val-plain">Non — ni cours du soir, ni formation en ligne, rien</span></div></td>
+        </tr>
+        <tr>
+          <td class="col-tech">wstatus</td>
+          <td class="col-nom">Situation professionnelle</td>
+          <td class="col-desc">Le jeune a-t-il un emploi ? (specifique aux donnees NEET)</td>
+          <td><div class="val-row"><span class="val-code">NEMP</span><span class="val-arrow">&#8594;</span><span class="val-plain">Non — sans emploi</span></div></td>
+        </tr>
+        <tr>
+          <td class="col-tech">unit</td>
+          <td class="col-nom">Unite de mesure</td>
+          <td class="col-desc">Dans quelle unite est exprimee la valeur ?</td>
+          <td><div class="val-row"><span class="val-code">PC</span><span class="val-arrow">&#8594;</span><span class="val-plain">En pourcentage (ex. 14,5 %)</span></div><div class="val-row"><span class="val-code">PC_ACT</span><span class="val-arrow">&#8594;</span><span class="val-plain">En % des personnes qui cherchent ou ont un emploi</span></div><div class="val-row"><span class="val-code">PC_POP</span><span class="val-arrow">&#8594;</span><span class="val-plain">En % de toute la population de cet age</span></div><div class="val-row"><span class="val-code">THS_PER</span><span class="val-arrow">&#8594;</span><span class="val-plain">En milliers de personnes (ex. 320 = 320 000 personnes)</span></div></td>
+        </tr>
+        <tr>
+          <td class="col-tech">geo</td>
+          <td class="col-nom">Pays</td>
+          <td class="col-desc">Quel pays ou zone geographique est concerne ?</td>
+          <td><div class="val-row"><span class="val-code">EU27_2020</span><span class="val-arrow">&#8594;</span><span class="val-plain">Moyenne des 27 pays de l'Union Europeenne</span></div><div class="val-row"><span class="val-code">FR</span><span class="val-arrow">&#8594;</span><span class="val-plain">France</span></div><div class="val-row"><span class="val-code">DE</span><span class="val-arrow">&#8594;</span><span class="val-plain">Allemagne</span></div><div class="val-row"><span class="val-code">IT</span><span class="val-arrow">&#8594;</span><span class="val-plain">Italie</span></div><div class="val-row"><span class="val-code">ES</span><span class="val-arrow">&#8594;</span><span class="val-plain">Espagne</span></div><div class="val-row"><span class="val-code">EL</span><span class="val-arrow">&#8594;</span><span class="val-plain">Grece</span></div><div class="val-row"><span class="val-code">PL</span><span class="val-arrow">&#8594;</span><span class="val-plain">Pologne</span></div><div class="val-row"><span class="val-code">...</span><span class="val-arrow">&#8594;</span><span class="val-plain">(et tous les autres pays europeens)</span></div></td>
+        </tr>
+        <tr>
+          <td class="col-tech">time</td>
+          <td class="col-nom">Annee</td>
+          <td class="col-desc">Pour quelle annee cette mesure a-t-elle ete faite ?</td>
+          <td><div class="val-row"><span class="val-code">2010</span><span class="val-arrow">&#8594;</span><span class="val-plain">Debut de la serie de donnees</span></div><div class="val-row"><span class="val-code">2020</span><span class="val-arrow">&#8594;</span><span class="val-plain">Annee du COVID-19 (forte perturbation)</span></div><div class="val-row"><span class="val-code">2025</span><span class="val-arrow">&#8594;</span><span class="val-plain">Annee la plus recente disponible</span></div></td>
+        </tr>
+        <tr>
+          <td class="col-tech">value</td>
+          <td class="col-nom">Valeur mesuree</td>
+          <td class="col-desc">Le chiffre lui-meme : le taux ou le nombre mesure. Peut etre vide si la donnee n'est pas disponible.</td>
+          <td><div class="val-row"><span class="val-code">ex. 14.5</span><span class="val-arrow">&#8594;</span><span class="val-plain">14,5 % de jeunes au chomage dans ce pays cette annee-la</span></div><div class="val-row"><span class="val-code">ex. 320.0</span><span class="val-arrow">&#8594;</span><span class="val-plain">320 000 jeunes employes dans ce secteur</span></div><div class="val-row"><span class="val-code">vide</span><span class="val-arrow">&#8594;</span><span class="val-plain">Donnee non disponible ou non communiquee par le pays</span></div></td>
+        </tr></tbody>
+    </table>
+    </div>
+  
+    <div class="section-label">Les 10 premieres lignes du fichier</div>
+    <div class="table-wrap">
+    <table class="data">
+      <thead><tr><th>Frequence de mesure<br><small>freq</small></th><th>Genre<br><small>sex</small></th><th>Tranche d'age<br><small>age</small></th><th>En formation ?<br><small>training</small></th><th>Situation professionnelle<br><small>wstatus</small></th><th>Unite<br><small>unit</small></th><th>Pays<br><small>geo</small></th><th>Annee<br><small>time</small></th><th>Valeur mesuree<br><small>value</small></th></tr></thead>
+      <tbody><tr><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="T">Tous (hommes + femmes)</span></td><td><span class="translated" title="Y15-24">15 a 24 ans</span></td><td><span class="translated" title="NO_FE_NO_NFE">Aucune formation suivie</span></td><td><span class="translated" title="NEMP">Sans emploi</span></td><td><span class="translated" title="PC">Pourcentage (%)</span></td><td><span class="translated" title="AT">Autriche</span></td><td>2010</td><td class="num">7.4</td></tr><tr><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="T">Tous (hommes + femmes)</span></td><td><span class="translated" title="Y15-24">15 a 24 ans</span></td><td><span class="translated" title="NO_FE_NO_NFE">Aucune formation suivie</span></td><td><span class="translated" title="NEMP">Sans emploi</span></td><td><span class="translated" title="PC">Pourcentage (%)</span></td><td><span class="translated" title="AT">Autriche</span></td><td>2011</td><td class="num">7.3</td></tr><tr><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="T">Tous (hommes + femmes)</span></td><td><span class="translated" title="Y15-24">15 a 24 ans</span></td><td><span class="translated" title="NO_FE_NO_NFE">Aucune formation suivie</span></td><td><span class="translated" title="NEMP">Sans emploi</span></td><td><span class="translated" title="PC">Pourcentage (%)</span></td><td><span class="translated" title="AT">Autriche</span></td><td>2012</td><td class="num">6.8</td></tr><tr><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="T">Tous (hommes + femmes)</span></td><td><span class="translated" title="Y15-24">15 a 24 ans</span></td><td><span class="translated" title="NO_FE_NO_NFE">Aucune formation suivie</span></td><td><span class="translated" title="NEMP">Sans emploi</span></td><td><span class="translated" title="PC">Pourcentage (%)</span></td><td><span class="translated" title="AT">Autriche</span></td><td>2013</td><td class="num">7.3</td></tr><tr><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="T">Tous (hommes + femmes)</span></td><td><span class="translated" title="Y15-24">15 a 24 ans</span></td><td><span class="translated" title="NO_FE_NO_NFE">Aucune formation suivie</span></td><td><span class="translated" title="NEMP">Sans emploi</span></td><td><span class="translated" title="PC">Pourcentage (%)</span></td><td><span class="translated" title="AT">Autriche</span></td><td>2014</td><td class="num">7.7</td></tr><tr><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="T">Tous (hommes + femmes)</span></td><td><span class="translated" title="Y15-24">15 a 24 ans</span></td><td><span class="translated" title="NO_FE_NO_NFE">Aucune formation suivie</span></td><td><span class="translated" title="NEMP">Sans emploi</span></td><td><span class="translated" title="PC">Pourcentage (%)</span></td><td><span class="translated" title="AT">Autriche</span></td><td>2015</td><td class="num">7.5</td></tr><tr><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="T">Tous (hommes + femmes)</span></td><td><span class="translated" title="Y15-24">15 a 24 ans</span></td><td><span class="translated" title="NO_FE_NO_NFE">Aucune formation suivie</span></td><td><span class="translated" title="NEMP">Sans emploi</span></td><td><span class="translated" title="PC">Pourcentage (%)</span></td><td><span class="translated" title="AT">Autriche</span></td><td>2016</td><td class="num">7.7</td></tr><tr><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="T">Tous (hommes + femmes)</span></td><td><span class="translated" title="Y15-24">15 a 24 ans</span></td><td><span class="translated" title="NO_FE_NO_NFE">Aucune formation suivie</span></td><td><span class="translated" title="NEMP">Sans emploi</span></td><td><span class="translated" title="PC">Pourcentage (%)</span></td><td><span class="translated" title="AT">Autriche</span></td><td>2017</td><td class="num">6.5</td></tr><tr><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="T">Tous (hommes + femmes)</span></td><td><span class="translated" title="Y15-24">15 a 24 ans</span></td><td><span class="translated" title="NO_FE_NO_NFE">Aucune formation suivie</span></td><td><span class="translated" title="NEMP">Sans emploi</span></td><td><span class="translated" title="PC">Pourcentage (%)</span></td><td><span class="translated" title="AT">Autriche</span></td><td>2018</td><td class="num">6.8</td></tr><tr><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="T">Tous (hommes + femmes)</span></td><td><span class="translated" title="Y15-24">15 a 24 ans</span></td><td><span class="translated" title="NO_FE_NO_NFE">Aucune formation suivie</span></td><td><span class="translated" title="NEMP">Sans emploi</span></td><td><span class="translated" title="PC">Pourcentage (%)</span></td><td><span class="translated" title="AT">Autriche</span></td><td>2019</td><td class="num">7.1</td></tr></tbody>
+    </table>
+    </div>
+  
+    <div class="section-label">Chiffres cles (sur l'ensemble du fichier)</div>
+    <div class="table-wrap">
+    <table class="stats">
+      <thead><tr><th>Indicateur</th><th>Valeur minimale</th><th>Valeur maximale</th><th>Valeur moyenne</th><th>Unite</th></tr></thead>
+      <tbody><tr><td class='col-nom'>Valeur mesuree</td><td class='num'>2.0</td><td class='num'>53.8</td><td class='num'>13.7</td><td class='sub'>Pourcentage (%)</td></tr></tbody>
+    </table>
+    </div>
+</section>
+
+<section class="card">
+  <div class="card-top">
+    <div>
+      <h2>Dans quels secteurs travaillent les jeunes ?</h2>
+      <p class="source">Eurostat lfsa_egan2 &nbsp;|&nbsp; 6 633 observations</p>
+    </div>
+  </div>
+  <div class="intro-box">
+    <p>Ce tableau recense le nombre de jeunes de 15 a 24 ans qui travaillent dans chaque grand secteur d'activite (commerce, technologie, sante...), exprime en milliers de personnes.</p>
+    <p class="pourquoi"><strong>Pourquoi c'est utile :</strong> Savoir dans quels secteurs les jeunes sont concentres permet d'anticiper l'impact de l'intelligence artificielle sur leur emploi.</p>
+  </div>
+  
+    <div class="section-label">Que signifie chaque colonne ?</div>
+    <div class="table-wrap">
+    <table class="dict">
+      <thead><tr>
+        <th>Nom technique</th>
+        <th>Ce que ca veut dire</th>
+        <th>Question a laquelle ca repond</th>
+        <th>Valeurs possibles</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td class="col-tech">freq</td>
+          <td class="col-nom">Frequence de mesure</td>
+          <td class="col-desc">A quelle frequence la mesure est-elle realisee ?</td>
+          <td><div class="val-row"><span class="val-code">A</span><span class="val-arrow">&#8594;</span><span class="val-plain">Une fois par an</span></div></td>
+        </tr>
+        <tr>
+          <td class="col-tech">unit</td>
+          <td class="col-nom">Unite de mesure</td>
+          <td class="col-desc">Dans quelle unite est exprimee la valeur ?</td>
+          <td><div class="val-row"><span class="val-code">PC</span><span class="val-arrow">&#8594;</span><span class="val-plain">En pourcentage (ex. 14,5 %)</span></div><div class="val-row"><span class="val-code">PC_ACT</span><span class="val-arrow">&#8594;</span><span class="val-plain">En % des personnes qui cherchent ou ont un emploi</span></div><div class="val-row"><span class="val-code">PC_POP</span><span class="val-arrow">&#8594;</span><span class="val-plain">En % de toute la population de cet age</span></div><div class="val-row"><span class="val-code">THS_PER</span><span class="val-arrow">&#8594;</span><span class="val-plain">En milliers de personnes (ex. 320 = 320 000 personnes)</span></div></td>
+        </tr>
+        <tr>
+          <td class="col-tech">sex</td>
+          <td class="col-nom">Genre</td>
+          <td class="col-desc">Quel groupe de genre est concerne ?</td>
+          <td><div class="val-row"><span class="val-code">T</span><span class="val-arrow">&#8594;</span><span class="val-plain">Hommes et femmes ensemble</span></div><div class="val-row"><span class="val-code">M</span><span class="val-arrow">&#8594;</span><span class="val-plain">Hommes uniquement</span></div><div class="val-row"><span class="val-code">F</span><span class="val-arrow">&#8594;</span><span class="val-plain">Femmes uniquement</span></div></td>
+        </tr>
+        <tr>
+          <td class="col-tech">age</td>
+          <td class="col-nom">Tranche d'age</td>
+          <td class="col-desc">Quelle tranche d'age est observee ?</td>
+          <td><div class="val-row"><span class="val-code">Y15-24</span><span class="val-arrow">&#8594;</span><span class="val-plain">15 a 24 ans</span></div><div class="val-row"><span class="val-code">Y15-29</span><span class="val-arrow">&#8594;</span><span class="val-plain">15 a 29 ans</span></div><div class="val-row"><span class="val-code">Y25-34</span><span class="val-arrow">&#8594;</span><span class="val-plain">25 a 34 ans</span></div></td>
+        </tr>
+        <tr>
+          <td class="col-tech">nace_r2</td>
+          <td class="col-nom">Secteur d'activite</td>
+          <td class="col-desc">Dans quel grand domaine professionnel le jeune travaille-t-il ?</td>
+          <td><div class="val-row"><span class="val-code">A</span><span class="val-arrow">&#8594;</span><span class="val-plain">Agriculture et peche</span></div><div class="val-row"><span class="val-code">C</span><span class="val-arrow">&#8594;</span><span class="val-plain">Industrie et fabrication</span></div><div class="val-row"><span class="val-code">F</span><span class="val-arrow">&#8594;</span><span class="val-plain">Construction et BTP</span></div><div class="val-row"><span class="val-code">G</span><span class="val-arrow">&#8594;</span><span class="val-plain">Commerce (magasins, grande distribution)</span></div><div class="val-row"><span class="val-code">I</span><span class="val-arrow">&#8594;</span><span class="val-plain">Hotellerie et restauration</span></div><div class="val-row"><span class="val-code">J</span><span class="val-arrow">&#8594;</span><span class="val-plain">Technologie et informatique</span></div><div class="val-row"><span class="val-code">Q</span><span class="val-arrow">&#8594;</span><span class="val-plain">Sante et aide a la personne</span></div><div class="val-row"><span class="val-code">TOTAL</span><span class="val-arrow">&#8594;</span><span class="val-plain">Tous secteurs confondus</span></div></td>
+        </tr>
+        <tr>
+          <td class="col-tech">geo</td>
+          <td class="col-nom">Pays</td>
+          <td class="col-desc">Quel pays ou zone geographique est concerne ?</td>
+          <td><div class="val-row"><span class="val-code">EU27_2020</span><span class="val-arrow">&#8594;</span><span class="val-plain">Moyenne des 27 pays de l'Union Europeenne</span></div><div class="val-row"><span class="val-code">FR</span><span class="val-arrow">&#8594;</span><span class="val-plain">France</span></div><div class="val-row"><span class="val-code">DE</span><span class="val-arrow">&#8594;</span><span class="val-plain">Allemagne</span></div><div class="val-row"><span class="val-code">IT</span><span class="val-arrow">&#8594;</span><span class="val-plain">Italie</span></div><div class="val-row"><span class="val-code">ES</span><span class="val-arrow">&#8594;</span><span class="val-plain">Espagne</span></div><div class="val-row"><span class="val-code">EL</span><span class="val-arrow">&#8594;</span><span class="val-plain">Grece</span></div><div class="val-row"><span class="val-code">PL</span><span class="val-arrow">&#8594;</span><span class="val-plain">Pologne</span></div><div class="val-row"><span class="val-code">...</span><span class="val-arrow">&#8594;</span><span class="val-plain">(et tous les autres pays europeens)</span></div></td>
+        </tr>
+        <tr>
+          <td class="col-tech">time</td>
+          <td class="col-nom">Annee</td>
+          <td class="col-desc">Pour quelle annee cette mesure a-t-elle ete faite ?</td>
+          <td><div class="val-row"><span class="val-code">2010</span><span class="val-arrow">&#8594;</span><span class="val-plain">Debut de la serie de donnees</span></div><div class="val-row"><span class="val-code">2020</span><span class="val-arrow">&#8594;</span><span class="val-plain">Annee du COVID-19 (forte perturbation)</span></div><div class="val-row"><span class="val-code">2025</span><span class="val-arrow">&#8594;</span><span class="val-plain">Annee la plus recente disponible</span></div></td>
+        </tr>
+        <tr>
+          <td class="col-tech">value</td>
+          <td class="col-nom">Valeur mesuree</td>
+          <td class="col-desc">Le chiffre lui-meme : le taux ou le nombre mesure. Peut etre vide si la donnee n'est pas disponible.</td>
+          <td><div class="val-row"><span class="val-code">ex. 14.5</span><span class="val-arrow">&#8594;</span><span class="val-plain">14,5 % de jeunes au chomage dans ce pays cette annee-la</span></div><div class="val-row"><span class="val-code">ex. 320.0</span><span class="val-arrow">&#8594;</span><span class="val-plain">320 000 jeunes employes dans ce secteur</span></div><div class="val-row"><span class="val-code">vide</span><span class="val-arrow">&#8594;</span><span class="val-plain">Donnee non disponible ou non communiquee par le pays</span></div></td>
+        </tr></tbody>
+    </table>
+    </div>
+  
+    <div class="section-label">Les 10 premieres lignes du fichier</div>
+    <div class="table-wrap">
+    <table class="data">
+      <thead><tr><th>Frequence de mesure<br><small>freq</small></th><th>Unite<br><small>unit</small></th><th>Genre<br><small>sex</small></th><th>Tranche d'age<br><small>age</small></th><th>Secteur d'activite<br><small>nace_r2</small></th><th>Pays<br><small>geo</small></th><th>Annee<br><small>time</small></th><th>Valeur mesuree<br><small>value</small></th></tr></thead>
+      <tbody><tr><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="THS_PER">Milliers de personnes</span></td><td><span class="translated" title="T">Tous (hommes + femmes)</span></td><td><span class="translated" title="Y15-24">15 a 24 ans</span></td><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="AT">Autriche</span></td><td>2015</td><td class="num">14.3</td></tr><tr><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="THS_PER">Milliers de personnes</span></td><td><span class="translated" title="T">Tous (hommes + femmes)</span></td><td><span class="translated" title="Y15-24">15 a 24 ans</span></td><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="AT">Autriche</span></td><td>2016</td><td class="num">11.8</td></tr><tr><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="THS_PER">Milliers de personnes</span></td><td><span class="translated" title="T">Tous (hommes + femmes)</span></td><td><span class="translated" title="Y15-24">15 a 24 ans</span></td><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="AT">Autriche</span></td><td>2017</td><td class="num">10.2</td></tr><tr><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="THS_PER">Milliers de personnes</span></td><td><span class="translated" title="T">Tous (hommes + femmes)</span></td><td><span class="translated" title="Y15-24">15 a 24 ans</span></td><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="AT">Autriche</span></td><td>2018</td><td class="num">9.2</td></tr><tr><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="THS_PER">Milliers de personnes</span></td><td><span class="translated" title="T">Tous (hommes + femmes)</span></td><td><span class="translated" title="Y15-24">15 a 24 ans</span></td><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="AT">Autriche</span></td><td>2019</td><td class="num">11.1</td></tr><tr><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="THS_PER">Milliers de personnes</span></td><td><span class="translated" title="T">Tous (hommes + femmes)</span></td><td><span class="translated" title="Y15-24">15 a 24 ans</span></td><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="AT">Autriche</span></td><td>2020</td><td class="num">11.0</td></tr><tr><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="THS_PER">Milliers de personnes</span></td><td><span class="translated" title="T">Tous (hommes + femmes)</span></td><td><span class="translated" title="Y15-24">15 a 24 ans</span></td><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="AT">Autriche</span></td><td>2021</td><td class="num">9.8</td></tr><tr><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="THS_PER">Milliers de personnes</span></td><td><span class="translated" title="T">Tous (hommes + femmes)</span></td><td><span class="translated" title="Y15-24">15 a 24 ans</span></td><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="AT">Autriche</span></td><td>2022</td><td class="num">10.0</td></tr><tr><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="THS_PER">Milliers de personnes</span></td><td><span class="translated" title="T">Tous (hommes + femmes)</span></td><td><span class="translated" title="Y15-24">15 a 24 ans</span></td><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="AT">Autriche</span></td><td>2023</td><td class="num">11.3</td></tr><tr><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="THS_PER">Milliers de personnes</span></td><td><span class="translated" title="T">Tous (hommes + femmes)</span></td><td><span class="translated" title="Y15-24">15 a 24 ans</span></td><td><span class="translated" title="A">Agriculture</span></td><td><span class="translated" title="AT">Autriche</span></td><td>2024</td><td class="num">7.2</td></tr></tbody>
+    </table>
+    </div>
+  
+    <div class="section-label">Chiffres cles (sur l'ensemble du fichier)</div>
+    <div class="table-wrap">
+    <table class="stats">
+      <thead><tr><th>Indicateur</th><th>Valeur minimale</th><th>Valeur maximale</th><th>Valeur moyenne</th><th>Unite</th></tr></thead>
+      <tbody><tr><td class='col-nom'>Valeur mesuree</td><td class='num'>0.5</td><td class='num'>16521.0</td><td class='num'>166.5</td><td class='sub'>Milliers de personnes</td></tr></tbody>
+    </table>
+    </div>
+</section>
+</div>
+
+<footer>
+  Source : Eurostat (lfsa_ergaed, lfsa_urgaed, edat_lfse_22, lfsa_egan2) &nbsp;|&nbsp;
+  Donnees 2010-2025 &nbsp;|&nbsp; Jeunes de 15 a 34 ans &nbsp;|&nbsp; 27 pays de l'UE
+</footer>
+
+</body>
+</html>
